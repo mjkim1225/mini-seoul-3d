@@ -1,0 +1,3880 @@
+[
+	{
+		"line": 1,
+		"trains": [
+			{
+				"trainNo": "K40",
+				"timetables": [
+					{
+					"uid" : 50304,
+					"arriveTime" : "00:00:00",
+					"departTime" : "07:58:00",
+					"stationNm" : "인천",
+					"stationCd" : "1812",
+					"nodeId" : "RN_23_000060",
+					"originStation" : 1812,
+					"weekTag" : 1
+				},
+					{
+						"uid" : 52596,
+						"arriveTime" : "08:01:30",
+						"departTime" : "08:02:00",
+						"stationNm" : "동인천",
+						"stationCd" : "1811",
+						"nodeId" : "RN_23_000018",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 43819,
+						"arriveTime" : "08:03:30",
+						"departTime" : "08:04:00",
+						"stationNm" : "도원",
+						"stationCd" : "1817",
+						"nodeId" : "RN_23_000013",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 8514,
+						"arriveTime" : "08:05:30",
+						"departTime" : "08:06:00",
+						"stationNm" : "제물포",
+						"stationCd" : "1810",
+						"nodeId" : "RN_23_000046",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 34153,
+						"arriveTime" : "08:07:30",
+						"departTime" : "08:08:00",
+						"stationNm" : "도화",
+						"stationCd" : "1823",
+						"nodeId" : "RN_23_000014",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 47540,
+						"arriveTime" : "08:09:30",
+						"departTime" : "08:10:00",
+						"stationNm" : "주안",
+						"stationCd" : "1809",
+						"nodeId" : "RN_23_000064",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 11147,
+						"arriveTime" : "08:11:30",
+						"departTime" : "08:12:00",
+						"stationNm" : "간석",
+						"stationCd" : "1816",
+						"nodeId" : "RN_23_000001",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 18252,
+						"arriveTime" : "08:14:00",
+						"departTime" : "08:14:30",
+						"stationNm" : "동암",
+						"stationCd" : "1808",
+						"nodeId" : "RN_23_000017",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 63076,
+						"arriveTime" : "08:16:30",
+						"departTime" : "08:17:00",
+						"stationNm" : "백운",
+						"stationCd" : "1807",
+						"nodeId" : "RN_23_000022",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 23411,
+						"arriveTime" : "08:19:00",
+						"departTime" : "08:19:30",
+						"stationNm" : "부평",
+						"stationCd" : "1806",
+						"nodeId" : "RN_23_000057",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 14670,
+						"arriveTime" : "08:21:30",
+						"departTime" : "08:22:00",
+						"stationNm" : "부개",
+						"stationCd" : "1815",
+						"nodeId" : "RN_23_000023",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 18550,
+						"arriveTime" : "08:23:30",
+						"departTime" : "08:24:00",
+						"stationNm" : "송내",
+						"stationCd" : "1805",
+						"nodeId" : "RN_31_000106",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 51425,
+						"arriveTime" : "08:25:30",
+						"departTime" : "08:26:00",
+						"stationNm" : "중동",
+						"stationCd" : "1822",
+						"nodeId" : "RN_31_000175",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 5931,
+						"arriveTime" : "08:28:00",
+						"departTime" : "08:28:30",
+						"stationNm" : "부천",
+						"stationCd" : "1804",
+						"nodeId" : "RN_31_000079",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 24318,
+						"arriveTime" : "08:30:00",
+						"departTime" : "08:30:30",
+						"stationNm" : "소사",
+						"stationCd" : "1814",
+						"nodeId" : "RN_31_000104",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 12092,
+						"arriveTime" : "08:32:30",
+						"departTime" : "08:33:00",
+						"stationNm" : "역곡",
+						"stationCd" : "1803",
+						"nodeId" : "RN_31_000135",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 52793,
+						"arriveTime" : "08:34:30",
+						"departTime" : "08:35:00",
+						"stationNm" : "온수",
+						"stationCd" : "1821",
+						"nodeId" : "RN_11_000219",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 1731,
+						"arriveTime" : "08:37:30",
+						"departTime" : "08:38:00",
+						"stationNm" : "오류동",
+						"stationCd" : "1802",
+						"nodeId" : "RN_11_000216",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 59442,
+						"arriveTime" : "08:40:00",
+						"departTime" : "08:40:30",
+						"stationNm" : "개봉",
+						"stationCd" : "1801",
+						"nodeId" : "RN_11_000011",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 20222,
+						"arriveTime" : "08:42:00",
+						"departTime" : "08:42:30",
+						"stationNm" : "구일",
+						"stationCd" : "1813",
+						"nodeId" : "RN_11_000037",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 65554,
+						"arriveTime" : "08:44:30",
+						"departTime" : "08:45:30",
+						"stationNm" : "구로",
+						"stationCd" : "1701",
+						"nodeId" : "RN_11_000030",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 65554,
+						"arriveTime" : "08:44:30",
+						"departTime" : "08:45:30",
+						"stationNm" : "구로",
+						"stationCd" : "1701",
+						"nodeId" : "RN_11_000330",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 31544,
+						"arriveTime" : "08:47:00",
+						"departTime" : "08:47:30",
+						"stationNm" : "신도림",
+						"stationCd" : "1007",
+						"nodeId" : "RN_11_000174",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33697,
+						"arriveTime" : "08:49:30",
+						"departTime" : "08:50:00",
+						"stationNm" : "영등포",
+						"stationCd" : "1006",
+						"nodeId" : "RN_11_000418",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 38488,
+						"arriveTime" : "08:52:00",
+						"departTime" : "08:52:30",
+						"stationNm" : "신길",
+						"stationCd" : "1032",
+						"nodeId" : "RN_11_000168",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 8253,
+						"arriveTime" : "08:53:30",
+						"departTime" : "08:54:00",
+						"stationNm" : "대방",
+						"stationCd" : "1005",
+						"nodeId" : "RN_11_000067",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 46530,
+						"arriveTime" : "08:56:00",
+						"departTime" : "08:56:30",
+						"stationNm" : "노량진",
+						"stationCd" : "1004",
+						"nodeId" : "RN_11_000356",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 24009,
+						"arriveTime" : "08:59:30",
+						"departTime" : "09:00:00",
+						"stationNm" : "용산",
+						"stationCd" : "1003",
+						"nodeId" : "RN_11_000428",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 40170,
+						"arriveTime" : "09:02:00",
+						"departTime" : "09:02:30",
+						"stationNm" : "남영",
+						"stationCd" : "1002",
+						"nodeId" : "RN_11_000052",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 46794,
+						"arriveTime" : "09:05:00",
+						"departTime" : "09:05:30",
+						"stationNm" : "서울역",
+						"stationCd" : "0150",
+						"nodeId" : "RN_11_000369",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 63047,
+						"arriveTime" : "09:07:30",
+						"departTime" : "09:08:00",
+						"stationNm" : "시청",
+						"stationCd" : "0151",
+						"nodeId" : "RN_11_000406",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 45938,
+						"arriveTime" : "09:10:00",
+						"departTime" : "09:10:30",
+						"stationNm" : "종각",
+						"stationCd" : "0152",
+						"nodeId" : "RN_11_000247",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 53490,
+						"arriveTime" : "09:12:00",
+						"departTime" : "09:12:30",
+						"stationNm" : "종로3가",
+						"stationCd" : "0153",
+						"nodeId" : "RN_11_000248",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 21709,
+						"arriveTime" : "09:14:00",
+						"departTime" : "09:14:30",
+						"stationNm" : "종로5가",
+						"stationCd" : "0154",
+						"nodeId" : "RN_11_000249",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 56826,
+						"arriveTime" : "09:16:00",
+						"departTime" : "09:16:30",
+						"stationNm" : "동대문",
+						"stationCd" : "0155",
+						"nodeId" : "RN_11_000379",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 43645,
+						"arriveTime" : "09:18:00",
+						"departTime" : "09:18:30",
+						"stationNm" : "동묘앞",
+						"stationCd" : "0159",
+						"nodeId" : "RN_11_000382",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 44054,
+						"arriveTime" : "09:20:00",
+						"departTime" : "09:20:30",
+						"stationNm" : "신설동",
+						"stationCd" : "0156",
+						"nodeId" : "RN_11_000180",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 23325,
+						"arriveTime" : "09:22:00",
+						"departTime" : "09:22:30",
+						"stationNm" : "제기동",
+						"stationCd" : "0157",
+						"nodeId" : "RN_11_000246",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 69790,
+						"arriveTime" : "09:24:00",
+						"departTime" : "09:24:30",
+						"stationNm" : "청량리",
+						"stationCd" : "0158",
+						"nodeId" : "RN_11_000264",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 20757,
+						"arriveTime" : "09:27:00",
+						"departTime" : "09:27:30",
+						"stationNm" : "회기",
+						"stationCd" : "1015",
+						"nodeId" : "RN_11_000452",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 47005,
+						"arriveTime" : "09:29:00",
+						"departTime" : "09:29:30",
+						"stationNm" : "외대앞",
+						"stationCd" : "1016",
+						"nodeId" : "RN_11_000222",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 44709,
+						"arriveTime" : "09:30:30",
+						"departTime" : "09:31:00",
+						"stationNm" : "신이문",
+						"stationCd" : "1017",
+						"nodeId" : "RN_11_000182",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 60970,
+						"arriveTime" : "09:33:00",
+						"departTime" : "09:33:30",
+						"stationNm" : "석계",
+						"stationCd" : "1018",
+						"nodeId" : "RN_11_000149",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 38521,
+						"arriveTime" : "09:35:30",
+						"departTime" : "09:36:30",
+						"stationNm" : "광운대",
+						"stationCd" : "1019",
+						"nodeId" : "RN_11_000026",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 9106,
+						"arriveTime" : "09:38:00",
+						"departTime" : "09:38:30",
+						"stationNm" : "월계",
+						"stationCd" : "1020",
+						"nodeId" : "RN_11_000228",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 36443,
+						"arriveTime" : "09:40:30",
+						"departTime" : "09:41:00",
+						"stationNm" : "녹천",
+						"stationCd" : "1021",
+						"nodeId" : "RN_11_000060",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 21583,
+						"arriveTime" : "09:42:30",
+						"departTime" : "09:43:00",
+						"stationNm" : "창동",
+						"stationCd" : "1022",
+						"nodeId" : "RN_11_000440",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 6555,
+						"arriveTime" : "09:45:00",
+						"departTime" : "09:45:30",
+						"stationNm" : "방학",
+						"stationCd" : "1901",
+						"nodeId" : "RN_11_000113",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 6897,
+						"arriveTime" : "09:47:00",
+						"departTime" : "09:47:30",
+						"stationNm" : "도봉",
+						"stationCd" : "1902",
+						"nodeId" : "RN_11_000073",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 21938,
+						"arriveTime" : "09:49:00",
+						"departTime" : "09:49:30",
+						"stationNm" : "도봉산",
+						"stationCd" : "1903",
+						"nodeId" : "RN_11_000374",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 6390,
+						"arriveTime" : "09:52:00",
+						"departTime" : "09:52:30",
+						"stationNm" : "망월사",
+						"stationCd" : "1904",
+						"nodeId" : "RN_31_000055",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 8032,
+						"arriveTime" : "09:54:30",
+						"departTime" : "09:55:00",
+						"stationNm" : "회룡",
+						"stationCd" : "1905",
+						"nodeId" : "RN_31_000207",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 4019,
+						"arriveTime" : "09:57:30",
+						"departTime" : "09:58:00",
+						"stationNm" : "의정부",
+						"stationCd" : "1906",
+						"nodeId" : "RN_31_000156",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 34434,
+						"arriveTime" : "10:00:00",
+						"departTime" : "10:00:30",
+						"stationNm" : "가능",
+						"stationCd" : "1907",
+						"nodeId" : "RN_31_000001",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 13282,
+						"arriveTime" : "10:02:00",
+						"departTime" : "10:02:30",
+						"stationNm" : "녹양",
+						"stationCd" : "1908",
+						"nodeId" : "RN_31_000032",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7396,
+						"arriveTime" : "10:04:30",
+						"departTime" : "10:05:00",
+						"stationNm" : "양주",
+						"stationCd" : "1909",
+						"nodeId" : "RN_31_000131",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 56815,
+						"arriveTime" : "10:09:30",
+						"departTime" : "10:10:00",
+						"stationNm" : "덕계",
+						"stationCd" : "1910",
+						"nodeId" : "RN_31_000043",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 2606,
+						"arriveTime" : "10:13:00",
+						"departTime" : "10:13:30",
+						"stationNm" : "덕정",
+						"stationCd" : "1911",
+						"nodeId" : "RN_31_000045",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33530,
+						"arriveTime" : "10:18:00",
+						"departTime" : "10:18:30",
+						"stationNm" : "지행",
+						"stationCd" : "1912",
+						"nodeId" : "RN_31_000181",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 18771,
+						"arriveTime" : "10:20:00",
+						"departTime" : "10:20:30",
+						"stationNm" : "동두천중앙",
+						"stationCd" : "1913",
+						"nodeId" : "RN_31_000049",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 12720,
+						"arriveTime" : "10:22:30",
+						"departTime" : "10:23:00",
+						"stationNm" : "보산",
+						"stationCd" : "1914",
+						"nodeId" : "RN_31_000076",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 68394,
+						"arriveTime" : "10:25:00",
+						"departTime" : "10:25:30",
+						"stationNm" : "동두천",
+						"stationCd" : "1915",
+						"nodeId" : "RN_31_000048",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 22093,
+						"arriveTime" : "10:29:30",
+						"departTime" : "00:00:00",
+						"stationNm" : "소요산",
+						"stationCd" : "1916",
+						"nodeId" : "RN_31_000105",
+						"originStation" : 1812,
+						"weekTag" : 1
+					}
+				]
+			},
+			{
+				"trainNo": "K620",
+				"timetables": [
+					{
+						"uid" : 8686,
+						"arriveTime" : "00:00:00",
+						"departTime" : "07:54:00",
+						"stationNm" : "천안",
+						"station_cd" : "1728",
+						"nodeId" : "RN_34_000048",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 19641,
+						"arriveTime" : "07:58:00",
+						"departTime" : "07:58:30",
+						"stationNm" : "두정",
+						"station_cd" : "1727",
+						"nodeId" : "RN_34_000010",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 22414,
+						"arriveTime" : "08:03:00",
+						"departTime" : "08:03:30",
+						"stationNm" : "직산",
+						"station_cd" : "1726",
+						"nodeId" : "RN_34_000031",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 43352,
+						"arriveTime" : "08:07:30",
+						"departTime" : "08:08:00",
+						"stationNm" : "성환",
+						"station_cd" : "1725",
+						"nodeId" : "RN_34_000044",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 37316,
+						"arriveTime" : "08:14:30",
+						"departTime" : "08:15:00",
+						"stationNm" : "평택",
+						"station_cd" : "1724",
+						"nodeId" : "RN_31_000253",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 59155,
+						"arriveTime" : "08:19:00",
+						"departTime" : "08:19:30",
+						"stationNm" : "평택지제",
+						"station_cd" : "1723",
+						"nodeId" : "RN_31_000178",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 39215,
+						"arriveTime" : "08:23:30",
+						"departTime" : "08:24:00",
+						"stationNm" : "서정리",
+						"station_cd" : "1722",
+						"nodeId" : "RN_31_000096",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 54850,
+						"arriveTime" : "08:26:30",
+						"departTime" : "08:27:00",
+						"stationNm" : "송탄",
+						"station_cd" : "1721",
+						"nodeId" : "RN_31_000109",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 4587,
+						"arriveTime" : "08:30:00",
+						"departTime" : "08:30:30",
+						"stationNm" : "진위",
+						"station_cd" : "1720",
+						"nodeId" : "RN_31_000182",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 14363,
+						"arriveTime" : "08:33:30",
+						"departTime" : "08:34:00",
+						"stationNm" : "오산",
+						"station_cd" : "1719",
+						"nodeId" : "RN_31_000245",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 26812,
+						"arriveTime" : "08:37:30",
+						"departTime" : "08:38:00",
+						"stationNm" : "오산대",
+						"station_cd" : "1718",
+						"nodeId" : "RN_31_000142",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 28476,
+						"arriveTime" : "08:40:30",
+						"departTime" : "08:41:00",
+						"stationNm" : "세마",
+						"station_cd" : "1717",
+						"nodeId" : "RN_31_000103",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7825,
+						"arriveTime" : "08:43:30",
+						"departTime" : "08:44:30",
+						"stationNm" : "병점",
+						"station_cd" : "1716",
+						"nodeId" : "RN_31_000074",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7825,
+						"arriveTime" : "08:43:30",
+						"departTime" : "08:44:30",
+						"stationNm" : "병점",
+						"station_cd" : "1716",
+						"nodeId" : "RN_31_000238",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33546,
+						"arriveTime" : "08:48:30",
+						"departTime" : "08:49:00",
+						"stationNm" : "세류",
+						"station_cd" : "1715",
+						"nodeId" : "RN_31_000102",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33057,
+						"arriveTime" : "08:52:00",
+						"departTime" : "08:52:30",
+						"stationNm" : "수원",
+						"station_cd" : "1713",
+						"nodeId" : "RN_31_000112",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 13121,
+						"arriveTime" : "08:55:00",
+						"departTime" : "08:55:30",
+						"stationNm" : "화서",
+						"station_cd" : "1712",
+						"nodeId" : "RN_31_000204",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 278,
+						"arriveTime" : "08:58:00",
+						"departTime" : "08:58:30",
+						"stationNm" : "성균관대",
+						"station_cd" : "1711",
+						"nodeId" : "RN_31_000101",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 58152,
+						"arriveTime" : "09:01:30",
+						"departTime" : "09:02:00",
+						"stationNm" : "의왕",
+						"station_cd" : "1710",
+						"nodeId" : "RN_31_000155",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 15617,
+						"arriveTime" : "09:04:00",
+						"departTime" : "09:04:30",
+						"stationNm" : "당정",
+						"station_cd" : "1729",
+						"nodeId" : "RN_31_000035",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 299,
+						"arriveTime" : "09:06:00",
+						"departTime" : "09:06:30",
+						"stationNm" : "군포",
+						"station_cd" : "1709",
+						"nodeId" : "RN_31_000023",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 3462,
+						"arriveTime" : "09:09:30",
+						"departTime" : "09:10:00",
+						"stationNm" : "금정",
+						"station_cd" : "1708",
+						"nodeId" : "RN_31_000026",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 1372,
+						"arriveTime" : "09:12:00",
+						"departTime" : "09:12:30",
+						"stationNm" : "명학",
+						"station_cd" : "1707",
+						"nodeId" : "RN_31_000061",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 41033,
+						"arriveTime" : "09:15:00",
+						"departTime" : "09:15:30",
+						"stationNm" : "안양",
+						"station_cd" : "1706",
+						"nodeId" : "RN_31_000244",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 32252,
+						"arriveTime" : "09:18:00",
+						"departTime" : "09:18:30",
+						"stationNm" : "관악",
+						"station_cd" : "1705",
+						"nodeId" : "RN_31_000016",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 1384,
+						"arriveTime" : "09:20:30",
+						"departTime" : "09:21:00",
+						"stationNm" : "석수",
+						"station_cd" : "1704",
+						"nodeId" : "RN_31_000099",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 332,
+						"arriveTime" : "09:23:30",
+						"departTime" : "09:24:00",
+						"stationNm" : "금천구청",
+						"station_cd" : "1703",
+						"nodeId" : "RN_11_000342",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 43015,
+						"arriveTime" : "09:26:00",
+						"departTime" : "09:26:30",
+						"stationNm" : "독산",
+						"station_cd" : "1714",
+						"nodeId" : "RN_11_000077",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 301,
+						"arriveTime" : "09:28:30",
+						"departTime" : "09:29:00",
+						"stationNm" : "가산디지털단지",
+						"station_cd" : "1702",
+						"nodeId" : "RN_11_000315",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 65701,
+						"arriveTime" : "09:33:00",
+						"departTime" : "09:34:00",
+						"stationNm" : "구로",
+						"station_cd" : "1701",
+						"nodeId" : "RN_11_000330",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 65701,
+						"arriveTime" : "09:33:00",
+						"departTime" : "09:34:00",
+						"stationNm" : "구로",
+						"station_cd" : "1701",
+						"nodeId" : "RN_11_000030",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 31696,
+						"arriveTime" : "09:35:30",
+						"departTime" : "09:36:00",
+						"stationNm" : "신도림",
+						"station_cd" : "1007",
+						"nodeId" : "RN_11_000174",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33877,
+						"arriveTime" : "09:38:00",
+						"departTime" : "09:38:30",
+						"stationNm" : "영등포",
+						"station_cd" : "1006",
+						"nodeId" : "RN_11_000418",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 38665,
+						"arriveTime" : "09:40:30",
+						"departTime" : "09:41:00",
+						"stationNm" : "신길",
+						"station_cd" : "1032",
+						"nodeId" : "RN_11_000168",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 8417,
+						"arriveTime" : "09:42:00",
+						"departTime" : "09:42:30",
+						"stationNm" : "대방",
+						"station_cd" : "1005",
+						"nodeId" : "RN_11_000067",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 46709,
+						"arriveTime" : "09:44:30",
+						"departTime" : "09:45:00",
+						"stationNm" : "노량진",
+						"station_cd" : "1004",
+						"nodeId" : "RN_11_000356",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 24114,
+						"arriveTime" : "09:48:00",
+						"departTime" : "09:48:30",
+						"stationNm" : "용산",
+						"station_cd" : "1003",
+						"nodeId" : "RN_11_000428",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 40289,
+						"arriveTime" : "09:50:30",
+						"departTime" : "09:51:00",
+						"stationNm" : "남영",
+						"station_cd" : "1002",
+						"nodeId" : "RN_11_000052",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 46892,
+						"arriveTime" : "09:53:30",
+						"departTime" : "09:54:00",
+						"stationNm" : "서울역",
+						"station_cd" : "0150",
+						"nodeId" : "RN_11_000369",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 63158,
+						"arriveTime" : "09:56:00",
+						"departTime" : "09:56:30",
+						"stationNm" : "시청",
+						"station_cd" : "0151",
+						"nodeId" : "RN_11_000406",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 46038,
+						"arriveTime" : "09:58:30",
+						"departTime" : "09:59:00",
+						"stationNm" : "종각",
+						"station_cd" : "0152",
+						"nodeId" : "RN_11_000247",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 53596,
+						"arriveTime" : "10:00:30",
+						"departTime" : "10:01:00",
+						"stationNm" : "종로3가",
+						"station_cd" : "0153",
+						"nodeId" : "RN_11_000248",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 21820,
+						"arriveTime" : "10:02:30",
+						"departTime" : "10:03:00",
+						"stationNm" : "종로5가",
+						"station_cd" : "0154",
+						"nodeId" : "RN_11_000249",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 56933,
+						"arriveTime" : "10:04:30",
+						"departTime" : "10:05:00",
+						"stationNm" : "동대문",
+						"station_cd" : "0155",
+						"nodeId" : "RN_11_000379",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 43735,
+						"arriveTime" : "10:06:30",
+						"departTime" : "10:07:00",
+						"stationNm" : "동묘앞",
+						"station_cd" : "0159",
+						"nodeId" : "RN_11_000382",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 44142,
+						"arriveTime" : "10:08:30",
+						"departTime" : "10:09:00",
+						"stationNm" : "신설동",
+						"station_cd" : "0156",
+						"nodeId" : "RN_11_000180",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 23412,
+						"arriveTime" : "10:10:30",
+						"departTime" : "10:11:00",
+						"stationNm" : "제기동",
+						"station_cd" : "0157",
+						"nodeId" : "RN_11_000246",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 69797,
+						"arriveTime" : "10:12:30",
+						"departTime" : "10:13:00",
+						"stationNm" : "청량리",
+						"station_cd" : "0158",
+						"nodeId" : "RN_11_000264",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 20829,
+						"arriveTime" : "10:15:30",
+						"departTime" : "10:16:00",
+						"stationNm" : "회기",
+						"station_cd" : "1015",
+						"nodeId" : "RN_11_000452",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 47080,
+						"arriveTime" : "10:17:30",
+						"departTime" : "10:18:00",
+						"stationNm" : "외대앞",
+						"station_cd" : "1016",
+						"nodeId" : "RN_11_000222",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 44772,
+						"arriveTime" : "10:19:00",
+						"departTime" : "10:19:30",
+						"stationNm" : "신이문",
+						"station_cd" : "1017",
+						"nodeId" : "RN_11_000182",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 61049,
+						"arriveTime" : "10:21:30",
+						"departTime" : "10:22:00",
+						"stationNm" : "석계",
+						"station_cd" : "1018",
+						"nodeId" : "RN_11_000149",
+						"originStation" : 1728,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 37773,
+						"arriveTime" : "10:24:00",
+						"departTime" : "00:00:00",
+						"stationNm" : "광운대",
+						"station_cd" : "1019",
+						"nodeId" : "RN_11_000026",
+						"originStation" : 1728,
+						"weekTag" : 1
+					}
+				]
+			},
+			{
+				"trainNo": "K410",
+				"timetables": [
+					{
+						"uid" : 43400,
+						"arriveTime" : "00:00:00",
+						"departTime" : "05:55:00",
+						"stationNm" : "서동탄",
+						"station_cd" : "1749",
+						"nodeId" : "RN_31_000095",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7643,
+						"arriveTime" : "06:00:00",
+						"departTime" : "06:01:00",
+						"stationNm" : "병점",
+						"station_cd" : "1716",
+						"nodeId" : "RN_31_000074",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7643,
+						"arriveTime" : "06:00:00",
+						"departTime" : "06:01:00",
+						"stationNm" : "병점",
+						"station_cd" : "1716",
+						"nodeId" : "RN_31_000238",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33339,
+						"arriveTime" : "06:05:00",
+						"departTime" : "06:05:30",
+						"stationNm" : "세류",
+						"station_cd" : "1715",
+						"nodeId" : "RN_31_000102",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 32827,
+						"arriveTime" : "06:08:30",
+						"departTime" : "06:09:00",
+						"stationNm" : "수원",
+						"station_cd" : "1713",
+						"nodeId" : "RN_31_000112",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 12954,
+						"arriveTime" : "06:11:30",
+						"departTime" : "06:12:00",
+						"stationNm" : "화서",
+						"station_cd" : "1712",
+						"nodeId" : "RN_31_000204",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 47,
+						"arriveTime" : "06:14:30",
+						"departTime" : "06:15:00",
+						"stationNm" : "성균관대",
+						"station_cd" : "1711",
+						"nodeId" : "RN_31_000101",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 57925,
+						"arriveTime" : "06:18:00",
+						"departTime" : "06:18:30",
+						"stationNm" : "의왕",
+						"station_cd" : "1710",
+						"nodeId" : "RN_31_000155",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 15399,
+						"arriveTime" : "06:20:30",
+						"departTime" : "06:21:00",
+						"stationNm" : "당정",
+						"station_cd" : "1729",
+						"nodeId" : "RN_31_000035",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 57,
+						"arriveTime" : "06:22:30",
+						"departTime" : "06:23:00",
+						"stationNm" : "군포",
+						"station_cd" : "1709",
+						"nodeId" : "RN_31_000023",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 3244,
+						"arriveTime" : "06:26:00",
+						"departTime" : "06:26:30",
+						"stationNm" : "금정",
+						"station_cd" : "1708",
+						"nodeId" : "RN_31_000026",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 1168,
+						"arriveTime" : "06:28:30",
+						"departTime" : "06:29:00",
+						"stationNm" : "명학",
+						"station_cd" : "1707",
+						"nodeId" : "RN_31_000061",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 40797,
+						"arriveTime" : "06:31:30",
+						"departTime" : "06:32:00",
+						"stationNm" : "안양",
+						"station_cd" : "1706",
+						"nodeId" : "RN_31_000244",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 32052,
+						"arriveTime" : "06:34:30",
+						"departTime" : "06:35:00",
+						"stationNm" : "관악",
+						"station_cd" : "1705",
+						"nodeId" : "RN_31_000016",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 1169,
+						"arriveTime" : "06:37:00",
+						"departTime" : "06:37:30",
+						"stationNm" : "석수",
+						"station_cd" : "1704",
+						"nodeId" : "RN_31_000099",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 67,
+						"arriveTime" : "06:40:00",
+						"departTime" : "06:40:30",
+						"stationNm" : "금천구청",
+						"station_cd" : "1703",
+						"nodeId" : "RN_11_000342",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 42785,
+						"arriveTime" : "06:42:30",
+						"departTime" : "06:43:00",
+						"stationNm" : "독산",
+						"station_cd" : "1714",
+						"nodeId" : "RN_11_000077",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 61,
+						"arriveTime" : "06:45:00",
+						"departTime" : "06:45:30",
+						"stationNm" : "가산디지털단지",
+						"station_cd" : "1702",
+						"nodeId" : "RN_11_000315",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 65149,
+						"arriveTime" : "06:49:30",
+						"departTime" : "06:50:30",
+						"stationNm" : "구로",
+						"station_cd" : "1701",
+						"nodeId" : "RN_11_000030",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 65149,
+						"arriveTime" : "06:49:30",
+						"departTime" : "06:50:30",
+						"stationNm" : "구로",
+						"station_cd" : "1701",
+						"nodeId" : "RN_11_000330",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 31097,
+						"arriveTime" : "06:52:00",
+						"departTime" : "06:52:30",
+						"stationNm" : "신도림",
+						"station_cd" : "1007",
+						"nodeId" : "RN_11_000174",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33199,
+						"arriveTime" : "06:54:30",
+						"departTime" : "06:55:00",
+						"stationNm" : "영등포",
+						"station_cd" : "1006",
+						"nodeId" : "RN_11_000418",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 38064,
+						"arriveTime" : "06:57:00",
+						"departTime" : "06:57:30",
+						"stationNm" : "신길",
+						"station_cd" : "1032",
+						"nodeId" : "RN_11_000168",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7892,
+						"arriveTime" : "06:58:30",
+						"departTime" : "06:59:00",
+						"stationNm" : "대방",
+						"station_cd" : "1005",
+						"nodeId" : "RN_11_000067",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 46098,
+						"arriveTime" : "07:01:00",
+						"departTime" : "07:01:30",
+						"stationNm" : "노량진",
+						"station_cd" : "1004",
+						"nodeId" : "RN_11_000356",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 23725,
+						"arriveTime" : "07:04:30",
+						"departTime" : "07:05:00",
+						"stationNm" : "용산",
+						"station_cd" : "1003",
+						"nodeId" : "RN_11_000428",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 39887,
+						"arriveTime" : "07:07:00",
+						"departTime" : "07:07:30",
+						"stationNm" : "남영",
+						"station_cd" : "1002",
+						"nodeId" : "RN_11_000052",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 46516,
+						"arriveTime" : "07:10:00",
+						"departTime" : "07:10:30",
+						"stationNm" : "서울역",
+						"station_cd" : "0150",
+						"nodeId" : "RN_11_000369",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 62773,
+						"arriveTime" : "07:12:30",
+						"departTime" : "07:13:00",
+						"stationNm" : "시청",
+						"station_cd" : "0151",
+						"nodeId" : "RN_11_000406",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 45665,
+						"arriveTime" : "07:15:00",
+						"departTime" : "07:15:30",
+						"stationNm" : "종각",
+						"station_cd" : "0152",
+						"nodeId" : "RN_11_000247",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 53203,
+						"arriveTime" : "07:17:00",
+						"departTime" : "07:17:30",
+						"stationNm" : "종로3가",
+						"station_cd" : "0153",
+						"nodeId" : "RN_11_000248",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 21434,
+						"arriveTime" : "07:19:00",
+						"departTime" : "07:19:30",
+						"stationNm" : "종로5가",
+						"station_cd" : "0154",
+						"nodeId" : "RN_11_000249",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 56540,
+						"arriveTime" : "07:21:00",
+						"departTime" : "07:21:30",
+						"stationNm" : "동대문",
+						"station_cd" : "0155",
+						"nodeId" : "RN_11_000379",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 43371,
+						"arriveTime" : "07:23:00",
+						"departTime" : "07:23:30",
+						"stationNm" : "동묘앞",
+						"station_cd" : "0159",
+						"nodeId" : "RN_11_000382",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 43783,
+						"arriveTime" : "07:25:00",
+						"departTime" : "07:25:30",
+						"stationNm" : "신설동",
+						"station_cd" : "0156",
+						"nodeId" : "RN_11_000180",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 23058,
+						"arriveTime" : "07:27:00",
+						"departTime" : "07:27:30",
+						"stationNm" : "제기동",
+						"station_cd" : "0157",
+						"nodeId" : "RN_11_000246",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 69768,
+						"arriveTime" : "07:29:00",
+						"departTime" : "07:29:30",
+						"stationNm" : "청량리",
+						"station_cd" : "0158",
+						"nodeId" : "RN_11_000264",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 20536,
+						"arriveTime" : "07:32:00",
+						"departTime" : "07:32:30",
+						"stationNm" : "회기",
+						"station_cd" : "1015",
+						"nodeId" : "RN_11_000452",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 46768,
+						"arriveTime" : "07:34:00",
+						"departTime" : "07:34:30",
+						"stationNm" : "외대앞",
+						"station_cd" : "1016",
+						"nodeId" : "RN_11_000222",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 44486,
+						"arriveTime" : "07:35:30",
+						"departTime" : "07:36:00",
+						"stationNm" : "신이문",
+						"station_cd" : "1017",
+						"nodeId" : "RN_11_000182",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 60743,
+						"arriveTime" : "07:38:00",
+						"departTime" : "07:38:30",
+						"stationNm" : "석계",
+						"station_cd" : "1018",
+						"nodeId" : "RN_11_000149",
+						"originStation" : 1749,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 37385,
+						"arriveTime" : "07:40:30",
+						"departTime" : "00:00:00",
+						"stationNm" : "광운대",
+						"station_cd" : "1019",
+						"nodeId" : "RN_11_000026",
+						"originStation" : 1749,
+						"weekTag" : 1
+					}
+				]
+			},
+			{
+				"trainNo": "K184",
+				"timetables":[
+					{
+						"uid" : 51041,
+						"arriveTime" : "00:00:00",
+						"departTime" : "19:23:00",
+						"stationNm" : "인천",
+						"station_cd" : "1812",
+						"nodeId" : "RN_23_000060",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 53878,
+						"arriveTime" : "19:26:30",
+						"departTime" : "19:27:00",
+						"stationNm" : "동인천",
+						"station_cd" : "1811",
+						"nodeId" : "RN_23_000018",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 44578,
+						"arriveTime" : "19:28:30",
+						"departTime" : "19:29:00",
+						"stationNm" : "도원",
+						"station_cd" : "1817",
+						"nodeId" : "RN_23_000013",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 9596,
+						"arriveTime" : "19:30:30",
+						"departTime" : "19:31:00",
+						"stationNm" : "제물포",
+						"station_cd" : "1810",
+						"nodeId" : "RN_23_000046",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 34919,
+						"arriveTime" : "19:32:30",
+						"departTime" : "19:33:00",
+						"stationNm" : "도화",
+						"station_cd" : "1823",
+						"nodeId" : "RN_23_000014",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 48766,
+						"arriveTime" : "19:34:30",
+						"departTime" : "19:35:00",
+						"stationNm" : "주안",
+						"station_cd" : "1809",
+						"nodeId" : "RN_23_000064",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 11502,
+						"arriveTime" : "19:36:30",
+						"departTime" : "19:37:00",
+						"stationNm" : "간석",
+						"station_cd" : "1816",
+						"nodeId" : "RN_23_000001",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 19471,
+						"arriveTime" : "19:39:00",
+						"departTime" : "19:39:30",
+						"stationNm" : "동암",
+						"station_cd" : "1808",
+						"nodeId" : "RN_23_000017",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 63798,
+						"arriveTime" : "19:41:30",
+						"departTime" : "19:42:00",
+						"stationNm" : "백운",
+						"station_cd" : "1807",
+						"nodeId" : "RN_23_000022",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 24746,
+						"arriveTime" : "19:44:00",
+						"departTime" : "19:44:30",
+						"stationNm" : "부평",
+						"station_cd" : "1806",
+						"nodeId" : "RN_23_000057",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 15415,
+						"arriveTime" : "19:46:30",
+						"departTime" : "19:47:00",
+						"stationNm" : "부개",
+						"station_cd" : "1815",
+						"nodeId" : "RN_23_000023",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 19857,
+						"arriveTime" : "19:48:30",
+						"departTime" : "19:49:00",
+						"stationNm" : "송내",
+						"station_cd" : "1805",
+						"nodeId" : "RN_31_000106",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 52168,
+						"arriveTime" : "19:50:30",
+						"departTime" : "19:51:00",
+						"stationNm" : "중동",
+						"station_cd" : "1822",
+						"nodeId" : "RN_31_000175",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7251,
+						"arriveTime" : "19:53:00",
+						"departTime" : "19:53:30",
+						"stationNm" : "부천",
+						"station_cd" : "1804",
+						"nodeId" : "RN_31_000079",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 25058,
+						"arriveTime" : "19:55:00",
+						"departTime" : "19:55:30",
+						"stationNm" : "소사",
+						"station_cd" : "1814",
+						"nodeId" : "RN_31_000104",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 13153,
+						"arriveTime" : "19:57:30",
+						"departTime" : "19:58:00",
+						"stationNm" : "역곡",
+						"station_cd" : "1803",
+						"nodeId" : "RN_31_000135",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 53536,
+						"arriveTime" : "19:59:30",
+						"departTime" : "20:00:00",
+						"stationNm" : "온수",
+						"station_cd" : "1821",
+						"nodeId" : "RN_11_000219",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 2473,
+						"arriveTime" : "20:02:30",
+						"departTime" : "20:03:00",
+						"stationNm" : "오류동",
+						"station_cd" : "1802",
+						"nodeId" : "RN_11_000216",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 60636,
+						"arriveTime" : "20:05:00",
+						"departTime" : "20:05:30",
+						"stationNm" : "개봉",
+						"station_cd" : "1801",
+						"nodeId" : "RN_11_000011",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 20970,
+						"arriveTime" : "20:07:00",
+						"departTime" : "20:07:30",
+						"stationNm" : "구일",
+						"station_cd" : "1813",
+						"nodeId" : "RN_11_000037",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 67110,
+						"arriveTime" : "20:09:30",
+						"departTime" : "20:10:30",
+						"stationNm" : "구로",
+						"station_cd" : "1701",
+						"nodeId" : "RN_11_000330",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 67110,
+						"arriveTime" : "20:09:30",
+						"departTime" : "20:10:30",
+						"stationNm" : "구로",
+						"station_cd" : "1701",
+						"nodeId" : "RN_11_000030",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33779,
+						"arriveTime" : "20:12:00",
+						"departTime" : "20:12:30",
+						"stationNm" : "신도림",
+						"station_cd" : "1007",
+						"nodeId" : "RN_11_000174",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 35827,
+						"arriveTime" : "20:14:30",
+						"departTime" : "20:15:00",
+						"stationNm" : "영등포",
+						"station_cd" : "1006",
+						"nodeId" : "RN_11_000418",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 40592,
+						"arriveTime" : "20:17:00",
+						"departTime" : "20:17:30",
+						"stationNm" : "신길",
+						"station_cd" : "1032",
+						"nodeId" : "RN_11_000168",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 9947,
+						"arriveTime" : "20:18:30",
+						"departTime" : "20:19:00",
+						"stationNm" : "대방",
+						"station_cd" : "1005",
+						"nodeId" : "RN_11_000067",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 48585,
+						"arriveTime" : "20:21:00",
+						"departTime" : "20:21:30",
+						"stationNm" : "노량진",
+						"station_cd" : "1004",
+						"nodeId" : "RN_11_000356",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 25638,
+						"arriveTime" : "20:24:30",
+						"departTime" : "20:25:00",
+						"stationNm" : "용산",
+						"station_cd" : "1003",
+						"nodeId" : "RN_11_000428",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 41718,
+						"arriveTime" : "20:27:00",
+						"departTime" : "20:27:30",
+						"stationNm" : "남영",
+						"station_cd" : "1002",
+						"nodeId" : "RN_11_000052",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 48344,
+						"arriveTime" : "20:30:00",
+						"departTime" : "20:30:30",
+						"stationNm" : "서울역",
+						"station_cd" : "0150",
+						"nodeId" : "RN_11_000369",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 64620,
+						"arriveTime" : "20:32:30",
+						"departTime" : "20:33:00",
+						"stationNm" : "시청",
+						"station_cd" : "0151",
+						"nodeId" : "RN_11_000406",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 47465,
+						"arriveTime" : "20:35:00",
+						"departTime" : "20:35:30",
+						"stationNm" : "종각",
+						"station_cd" : "0152",
+						"nodeId" : "RN_11_000247",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 55040,
+						"arriveTime" : "20:37:00",
+						"departTime" : "20:37:30",
+						"stationNm" : "종로3가",
+						"station_cd" : "0153",
+						"nodeId" : "RN_11_000248",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 23321,
+						"arriveTime" : "20:39:00",
+						"departTime" : "20:39:30",
+						"stationNm" : "종로5가",
+						"station_cd" : "0154",
+						"nodeId" : "RN_11_000249",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 58430,
+						"arriveTime" : "20:41:00",
+						"departTime" : "20:41:30",
+						"stationNm" : "동대문",
+						"station_cd" : "0155",
+						"nodeId" : "RN_11_000379",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 45103,
+						"arriveTime" : "20:43:00",
+						"departTime" : "20:43:30",
+						"stationNm" : "동묘앞",
+						"station_cd" : "0159",
+						"nodeId" : "RN_11_000382",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 45567,
+						"arriveTime" : "20:45:00",
+						"departTime" : "20:45:30",
+						"stationNm" : "신설동",
+						"station_cd" : "0156",
+						"nodeId" : "RN_11_000180",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 24826,
+						"arriveTime" : "20:47:00",
+						"departTime" : "20:47:30",
+						"stationNm" : "제기동",
+						"station_cd" : "0157",
+						"nodeId" : "RN_11_000246",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 69914,
+						"arriveTime" : "20:49:00",
+						"departTime" : "20:49:30",
+						"stationNm" : "청량리",
+						"station_cd" : "0158",
+						"nodeId" : "RN_11_000264",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 22001,
+						"arriveTime" : "20:52:00",
+						"departTime" : "20:52:30",
+						"stationNm" : "회기",
+						"station_cd" : "1015",
+						"nodeId" : "RN_11_000452",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 48228,
+						"arriveTime" : "20:54:00",
+						"departTime" : "20:54:30",
+						"stationNm" : "외대앞",
+						"station_cd" : "1016",
+						"nodeId" : "RN_11_000222",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 45931,
+						"arriveTime" : "20:55:30",
+						"departTime" : "20:56:00",
+						"stationNm" : "신이문",
+						"station_cd" : "1017",
+						"nodeId" : "RN_11_000182",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 62235,
+						"arriveTime" : "20:58:00",
+						"departTime" : "20:58:30",
+						"stationNm" : "석계",
+						"station_cd" : "1018",
+						"nodeId" : "RN_11_000149",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 39259,
+						"arriveTime" : "21:00:30",
+						"departTime" : "21:01:30",
+						"stationNm" : "광운대",
+						"station_cd" : "1019",
+						"nodeId" : "RN_11_000026",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 9653,
+						"arriveTime" : "21:03:00",
+						"departTime" : "21:03:30",
+						"stationNm" : "월계",
+						"station_cd" : "1020",
+						"nodeId" : "RN_11_000228",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 37160,
+						"arriveTime" : "21:05:30",
+						"departTime" : "21:06:00",
+						"stationNm" : "녹천",
+						"station_cd" : "1021",
+						"nodeId" : "RN_11_000060",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 22304,
+						"arriveTime" : "21:07:30",
+						"departTime" : "21:08:00",
+						"stationNm" : "창동",
+						"station_cd" : "1022",
+						"nodeId" : "RN_11_000440",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7266,
+						"arriveTime" : "21:10:00",
+						"departTime" : "21:10:30",
+						"stationNm" : "방학",
+						"station_cd" : "1901",
+						"nodeId" : "RN_11_000113",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7555,
+						"arriveTime" : "21:12:00",
+						"departTime" : "21:12:30",
+						"stationNm" : "도봉",
+						"station_cd" : "1902",
+						"nodeId" : "RN_11_000073",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 22648,
+						"arriveTime" : "21:14:00",
+						"departTime" : "21:14:30",
+						"stationNm" : "도봉산",
+						"station_cd" : "1903",
+						"nodeId" : "RN_11_000374",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7091,
+						"arriveTime" : "21:17:00",
+						"departTime" : "21:17:30",
+						"stationNm" : "망월사",
+						"station_cd" : "1904",
+						"nodeId" : "RN_31_000055",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 8722,
+						"arriveTime" : "21:19:30",
+						"departTime" : "21:20:00",
+						"stationNm" : "회룡",
+						"station_cd" : "1905",
+						"nodeId" : "RN_31_000207",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 4618,
+						"arriveTime" : "21:22:30",
+						"departTime" : "21:23:00",
+						"stationNm" : "의정부",
+						"station_cd" : "1906",
+						"nodeId" : "RN_31_000156",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 34960,
+						"arriveTime" : "21:25:00",
+						"departTime" : "21:25:30",
+						"stationNm" : "가능",
+						"station_cd" : "1907",
+						"nodeId" : "RN_31_000001",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 13740,
+						"arriveTime" : "21:27:00",
+						"departTime" : "21:27:30",
+						"stationNm" : "녹양",
+						"station_cd" : "1908",
+						"nodeId" : "RN_31_000032",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7683,
+						"arriveTime" : "21:29:30",
+						"departTime" : "21:30:00",
+						"stationNm" : "양주",
+						"station_cd" : "1909",
+						"nodeId" : "RN_31_000131",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 57119,
+						"arriveTime" : "21:34:30",
+						"departTime" : "21:35:00",
+						"stationNm" : "덕계",
+						"station_cd" : "1910",
+						"nodeId" : "RN_31_000043",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 2967,
+						"arriveTime" : "21:38:00",
+						"departTime" : "21:38:30",
+						"stationNm" : "덕정",
+						"station_cd" : "1911",
+						"nodeId" : "RN_31_000045",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33885,
+						"arriveTime" : "21:43:00",
+						"departTime" : "21:43:30",
+						"stationNm" : "지행",
+						"station_cd" : "1912",
+						"nodeId" : "RN_31_000181",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 19101,
+						"arriveTime" : "21:45:00",
+						"departTime" : "21:45:30",
+						"stationNm" : "동두천중앙",
+						"station_cd" : "1913",
+						"nodeId" : "RN_31_000049",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 12950,
+						"arriveTime" : "21:47:30",
+						"departTime" : "21:48:00",
+						"stationNm" : "보산",
+						"station_cd" : "1914",
+						"nodeId" : "RN_31_000076",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 68365,
+						"arriveTime" : "21:50:00",
+						"departTime" : "00:00:00",
+						"stationNm" : "동두천",
+						"station_cd" : "1915",
+						"nodeId" : "RN_31_000048",
+						"originStation" : 1812,
+						"weekTag" : 1
+					}
+				]
+			},
+			{
+				"trainNo": "K188",
+				"timetables": [
+					{
+						"uid" : 51063,
+						"arriveTime" : "00:00:00",
+						"departTime" : "19:39:00",
+						"stationNm" : "인천",
+						"station_cd" : "1812",
+						"nodeId" : "RN_23_000060",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 53931,
+						"arriveTime" : "19:42:30",
+						"departTime" : "19:43:00",
+						"stationNm" : "동인천",
+						"station_cd" : "1811",
+						"nodeId" : "RN_23_000018",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 44602,
+						"arriveTime" : "19:44:30",
+						"departTime" : "19:45:00",
+						"stationNm" : "도원",
+						"station_cd" : "1817",
+						"nodeId" : "RN_23_000013",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 9632,
+						"arriveTime" : "19:46:30",
+						"departTime" : "19:47:00",
+						"stationNm" : "제물포",
+						"station_cd" : "1810",
+						"nodeId" : "RN_23_000046",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 34937,
+						"arriveTime" : "19:48:30",
+						"departTime" : "19:49:00",
+						"stationNm" : "도화",
+						"station_cd" : "1823",
+						"nodeId" : "RN_23_000014",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 48815,
+						"arriveTime" : "19:50:30",
+						"departTime" : "19:51:00",
+						"stationNm" : "주안",
+						"station_cd" : "1809",
+						"nodeId" : "RN_23_000064",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 11511,
+						"arriveTime" : "19:52:30",
+						"departTime" : "19:53:00",
+						"stationNm" : "간석",
+						"station_cd" : "1816",
+						"nodeId" : "RN_23_000001",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 19519,
+						"arriveTime" : "19:55:00",
+						"departTime" : "19:55:30",
+						"stationNm" : "동암",
+						"station_cd" : "1808",
+						"nodeId" : "RN_23_000017",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 63822,
+						"arriveTime" : "19:57:30",
+						"departTime" : "19:58:00",
+						"stationNm" : "백운",
+						"station_cd" : "1807",
+						"nodeId" : "RN_23_000022",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 24803,
+						"arriveTime" : "20:00:00",
+						"departTime" : "20:00:30",
+						"stationNm" : "부평",
+						"station_cd" : "1806",
+						"nodeId" : "RN_23_000057",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 15436,
+						"arriveTime" : "20:02:30",
+						"departTime" : "20:03:00",
+						"stationNm" : "부개",
+						"station_cd" : "1815",
+						"nodeId" : "RN_23_000023",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 19906,
+						"arriveTime" : "20:04:30",
+						"departTime" : "20:05:00",
+						"stationNm" : "송내",
+						"station_cd" : "1805",
+						"nodeId" : "RN_31_000106",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 52192,
+						"arriveTime" : "20:06:30",
+						"departTime" : "20:07:00",
+						"stationNm" : "중동",
+						"station_cd" : "1822",
+						"nodeId" : "RN_31_000175",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7291,
+						"arriveTime" : "20:09:00",
+						"departTime" : "20:09:30",
+						"stationNm" : "부천",
+						"station_cd" : "1804",
+						"nodeId" : "RN_31_000079",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 25079,
+						"arriveTime" : "20:11:00",
+						"departTime" : "20:11:30",
+						"stationNm" : "소사",
+						"station_cd" : "1814",
+						"nodeId" : "RN_31_000104",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 13193,
+						"arriveTime" : "20:13:30",
+						"departTime" : "20:14:00",
+						"stationNm" : "역곡",
+						"station_cd" : "1803",
+						"nodeId" : "RN_31_000135",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 53554,
+						"arriveTime" : "20:15:30",
+						"departTime" : "20:16:00",
+						"stationNm" : "온수",
+						"station_cd" : "1821",
+						"nodeId" : "RN_11_000219",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 2491,
+						"arriveTime" : "20:18:30",
+						"departTime" : "20:19:00",
+						"stationNm" : "오류동",
+						"station_cd" : "1802",
+						"nodeId" : "RN_11_000216",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 60690,
+						"arriveTime" : "20:21:00",
+						"departTime" : "20:21:30",
+						"stationNm" : "개봉",
+						"station_cd" : "1801",
+						"nodeId" : "RN_11_000011",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 20988,
+						"arriveTime" : "20:23:00",
+						"departTime" : "20:23:30",
+						"stationNm" : "구일",
+						"station_cd" : "1813",
+						"nodeId" : "RN_11_000037",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 67152,
+						"arriveTime" : "20:25:30",
+						"departTime" : "20:26:30",
+						"stationNm" : "구로",
+						"station_cd" : "1701",
+						"nodeId" : "RN_11_000330",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 67152,
+						"arriveTime" : "20:25:30",
+						"departTime" : "20:26:30",
+						"stationNm" : "구로",
+						"station_cd" : "1701",
+						"nodeId" : "RN_11_000030",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33845,
+						"arriveTime" : "20:28:00",
+						"departTime" : "20:28:30",
+						"stationNm" : "신도림",
+						"station_cd" : "1007",
+						"nodeId" : "RN_11_000174",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 35890,
+						"arriveTime" : "20:30:30",
+						"departTime" : "20:31:00",
+						"stationNm" : "영등포",
+						"station_cd" : "1006",
+						"nodeId" : "RN_11_000418",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 40661,
+						"arriveTime" : "20:33:00",
+						"departTime" : "20:33:30",
+						"stationNm" : "신길",
+						"station_cd" : "1032",
+						"nodeId" : "RN_11_000168",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 9982,
+						"arriveTime" : "20:34:30",
+						"departTime" : "20:35:00",
+						"stationNm" : "대방",
+						"station_cd" : "1005",
+						"nodeId" : "RN_11_000067",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 48649,
+						"arriveTime" : "20:37:00",
+						"departTime" : "20:37:30",
+						"stationNm" : "노량진",
+						"station_cd" : "1004",
+						"nodeId" : "RN_11_000356",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 25681,
+						"arriveTime" : "20:40:30",
+						"departTime" : "20:41:00",
+						"stationNm" : "용산",
+						"station_cd" : "1003",
+						"nodeId" : "RN_11_000428",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 41757,
+						"arriveTime" : "20:43:00",
+						"departTime" : "20:43:30",
+						"stationNm" : "남영",
+						"station_cd" : "1002",
+						"nodeId" : "RN_11_000052",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 48379,
+						"arriveTime" : "20:46:00",
+						"departTime" : "20:46:30",
+						"stationNm" : "서울역",
+						"station_cd" : "0150",
+						"nodeId" : "RN_11_000369",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 64655,
+						"arriveTime" : "20:48:30",
+						"departTime" : "20:49:00",
+						"stationNm" : "시청",
+						"station_cd" : "0151",
+						"nodeId" : "RN_11_000406",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 47515,
+						"arriveTime" : "20:51:00",
+						"departTime" : "20:51:30",
+						"stationNm" : "종각",
+						"station_cd" : "0152",
+						"nodeId" : "RN_11_000247",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 55082,
+						"arriveTime" : "20:53:00",
+						"departTime" : "20:53:30",
+						"stationNm" : "종로3가",
+						"station_cd" : "0153",
+						"nodeId" : "RN_11_000248",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 23355,
+						"arriveTime" : "20:55:00",
+						"departTime" : "20:55:30",
+						"stationNm" : "종로5가",
+						"station_cd" : "0154",
+						"nodeId" : "RN_11_000249",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 58479,
+						"arriveTime" : "20:57:00",
+						"departTime" : "20:57:30",
+						"stationNm" : "동대문",
+						"station_cd" : "0155",
+						"nodeId" : "RN_11_000379",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 45135,
+						"arriveTime" : "20:59:00",
+						"departTime" : "20:59:30",
+						"stationNm" : "동묘앞",
+						"station_cd" : "0159",
+						"nodeId" : "RN_11_000382",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 45611,
+						"arriveTime" : "21:01:00",
+						"departTime" : "21:01:30",
+						"stationNm" : "신설동",
+						"station_cd" : "0156",
+						"nodeId" : "RN_11_000180",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 24873,
+						"arriveTime" : "21:03:00",
+						"departTime" : "21:03:30",
+						"stationNm" : "제기동",
+						"station_cd" : "0157",
+						"nodeId" : "RN_11_000246",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 69918,
+						"arriveTime" : "21:05:00",
+						"departTime" : "21:05:30",
+						"stationNm" : "청량리",
+						"station_cd" : "0158",
+						"nodeId" : "RN_11_000264",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 22043,
+						"arriveTime" : "21:08:00",
+						"departTime" : "21:08:30",
+						"stationNm" : "회기",
+						"station_cd" : "1015",
+						"nodeId" : "RN_11_000452",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 48265,
+						"arriveTime" : "21:10:00",
+						"departTime" : "21:10:30",
+						"stationNm" : "외대앞",
+						"station_cd" : "1016",
+						"nodeId" : "RN_11_000222",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 45977,
+						"arriveTime" : "21:11:30",
+						"departTime" : "21:12:00",
+						"stationNm" : "신이문",
+						"station_cd" : "1017",
+						"nodeId" : "RN_11_000182",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 62273,
+						"arriveTime" : "21:14:00",
+						"departTime" : "21:14:30",
+						"stationNm" : "석계",
+						"station_cd" : "1018",
+						"nodeId" : "RN_11_000149",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 39278,
+						"arriveTime" : "21:16:30",
+						"departTime" : "21:17:30",
+						"stationNm" : "광운대",
+						"station_cd" : "1019",
+						"nodeId" : "RN_11_000026",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 9664,
+						"arriveTime" : "21:19:00",
+						"departTime" : "21:19:30",
+						"stationNm" : "월계",
+						"station_cd" : "1020",
+						"nodeId" : "RN_11_000228",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 37178,
+						"arriveTime" : "21:21:30",
+						"departTime" : "21:22:00",
+						"stationNm" : "녹천",
+						"station_cd" : "1021",
+						"nodeId" : "RN_11_000060",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 22321,
+						"arriveTime" : "21:23:30",
+						"departTime" : "21:24:00",
+						"stationNm" : "창동",
+						"station_cd" : "1022",
+						"nodeId" : "RN_11_000440",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7287,
+						"arriveTime" : "21:26:00",
+						"departTime" : "21:26:30",
+						"stationNm" : "방학",
+						"station_cd" : "1901",
+						"nodeId" : "RN_11_000113",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7571,
+						"arriveTime" : "21:28:00",
+						"departTime" : "21:28:30",
+						"stationNm" : "도봉",
+						"station_cd" : "1902",
+						"nodeId" : "RN_11_000073",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 22669,
+						"arriveTime" : "21:30:00",
+						"departTime" : "21:30:30",
+						"stationNm" : "도봉산",
+						"station_cd" : "1903",
+						"nodeId" : "RN_11_000374",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7111,
+						"arriveTime" : "21:33:00",
+						"departTime" : "21:33:30",
+						"stationNm" : "망월사",
+						"station_cd" : "1904",
+						"nodeId" : "RN_31_000055",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 8750,
+						"arriveTime" : "21:35:30",
+						"departTime" : "21:36:00",
+						"stationNm" : "회룡",
+						"station_cd" : "1905",
+						"nodeId" : "RN_31_000207",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 4636,
+						"arriveTime" : "21:38:30",
+						"departTime" : "21:39:00",
+						"stationNm" : "의정부",
+						"station_cd" : "1906",
+						"nodeId" : "RN_31_000156",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 34982,
+						"arriveTime" : "21:41:00",
+						"departTime" : "21:41:30",
+						"stationNm" : "가능",
+						"station_cd" : "1907",
+						"nodeId" : "RN_31_000001",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 13757,
+						"arriveTime" : "21:43:00",
+						"departTime" : "21:43:30",
+						"stationNm" : "녹양",
+						"station_cd" : "1908",
+						"nodeId" : "RN_31_000032",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7689,
+						"arriveTime" : "21:45:30",
+						"departTime" : "21:46:00",
+						"stationNm" : "양주",
+						"station_cd" : "1909",
+						"nodeId" : "RN_31_000131",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 57126,
+						"arriveTime" : "21:50:30",
+						"departTime" : "21:51:00",
+						"stationNm" : "덕계",
+						"station_cd" : "1910",
+						"nodeId" : "RN_31_000043",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 2978,
+						"arriveTime" : "21:54:00",
+						"departTime" : "21:54:30",
+						"stationNm" : "덕정",
+						"station_cd" : "1911",
+						"nodeId" : "RN_31_000045",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33894,
+						"arriveTime" : "21:59:00",
+						"departTime" : "21:59:30",
+						"stationNm" : "지행",
+						"station_cd" : "1912",
+						"nodeId" : "RN_31_000181",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 19109,
+						"arriveTime" : "22:01:00",
+						"departTime" : "22:01:30",
+						"stationNm" : "동두천중앙",
+						"station_cd" : "1913",
+						"nodeId" : "RN_31_000049",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 12961,
+						"arriveTime" : "22:03:30",
+						"departTime" : "22:04:00",
+						"stationNm" : "보산",
+						"station_cd" : "1914",
+						"nodeId" : "RN_31_000076",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 68441,
+						"arriveTime" : "22:06:00",
+						"departTime" : "22:06:30",
+						"stationNm" : "동두천",
+						"station_cd" : "1915",
+						"nodeId" : "RN_31_000048",
+						"originStation" : 1812,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 22165,
+						"arriveTime" : "22:10:30",
+						"departTime" : "00:00:00",
+						"stationNm" : "소요산",
+						"station_cd" : "1916",
+						"nodeId" : "RN_31_000105",
+						"originStation" : 1812,
+						"weekTag" : 1
+					}
+				]
+			},
+			{
+				"trainNo": "K412",
+				"timetables":[
+					{
+						"uid" : 7653,
+						"arriveTime" : "00:00:00",
+						"departTime" : "06:09:00",
+						"stationNm" : "병점",
+						"station_cd" : "1716",
+						"nodeId" : "RN_31_000238",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7653,
+						"arriveTime" : "00:00:00",
+						"departTime" : "06:09:00",
+						"stationNm" : "병점",
+						"station_cd" : "1716",
+						"nodeId" : "RN_31_000074",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33347,
+						"arriveTime" : "06:13:00",
+						"departTime" : "06:13:30",
+						"stationNm" : "세류",
+						"station_cd" : "1715",
+						"nodeId" : "RN_31_000102",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 32837,
+						"arriveTime" : "06:16:30",
+						"departTime" : "06:17:00",
+						"stationNm" : "수원",
+						"station_cd" : "1713",
+						"nodeId" : "RN_31_000112",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 12962,
+						"arriveTime" : "06:19:30",
+						"departTime" : "06:20:00",
+						"stationNm" : "화서",
+						"station_cd" : "1712",
+						"nodeId" : "RN_31_000204",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 58,
+						"arriveTime" : "06:22:30",
+						"departTime" : "06:23:00",
+						"stationNm" : "성균관대",
+						"station_cd" : "1711",
+						"nodeId" : "RN_31_000101",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 57932,
+						"arriveTime" : "06:26:00",
+						"departTime" : "06:26:30",
+						"stationNm" : "의왕",
+						"station_cd" : "1710",
+						"nodeId" : "RN_31_000155",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 15409,
+						"arriveTime" : "06:28:30",
+						"departTime" : "06:29:00",
+						"stationNm" : "당정",
+						"station_cd" : "1729",
+						"nodeId" : "RN_31_000035",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 68,
+						"arriveTime" : "06:30:30",
+						"departTime" : "06:31:00",
+						"stationNm" : "군포",
+						"station_cd" : "1709",
+						"nodeId" : "RN_31_000023",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 3255,
+						"arriveTime" : "06:34:00",
+						"departTime" : "06:34:30",
+						"stationNm" : "금정",
+						"station_cd" : "1708",
+						"nodeId" : "RN_31_000026",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 1179,
+						"arriveTime" : "06:36:30",
+						"departTime" : "06:37:00",
+						"stationNm" : "명학",
+						"station_cd" : "1707",
+						"nodeId" : "RN_31_000061",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 40810,
+						"arriveTime" : "06:39:30",
+						"departTime" : "06:40:00",
+						"stationNm" : "안양",
+						"station_cd" : "1706",
+						"nodeId" : "RN_31_000244",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 32066,
+						"arriveTime" : "06:42:30",
+						"departTime" : "06:43:00",
+						"stationNm" : "관악",
+						"station_cd" : "1705",
+						"nodeId" : "RN_31_000016",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 1178,
+						"arriveTime" : "06:45:00",
+						"departTime" : "06:45:30",
+						"stationNm" : "석수",
+						"station_cd" : "1704",
+						"nodeId" : "RN_31_000099",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 75,
+						"arriveTime" : "06:48:00",
+						"departTime" : "06:48:30",
+						"stationNm" : "금천구청",
+						"station_cd" : "1703",
+						"nodeId" : "RN_11_000342",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 42797,
+						"arriveTime" : "06:50:30",
+						"departTime" : "06:51:00",
+						"stationNm" : "독산",
+						"station_cd" : "1714",
+						"nodeId" : "RN_11_000077",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 73,
+						"arriveTime" : "06:53:00",
+						"departTime" : "06:53:30",
+						"stationNm" : "가산디지털단지",
+						"station_cd" : "1702",
+						"nodeId" : "RN_11_000315",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 65171,
+						"arriveTime" : "06:57:30",
+						"departTime" : "06:58:30",
+						"stationNm" : "구로",
+						"station_cd" : "1701",
+						"nodeId" : "RN_11_000330",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 65171,
+						"arriveTime" : "06:57:30",
+						"departTime" : "06:58:30",
+						"stationNm" : "구로",
+						"station_cd" : "1701",
+						"nodeId" : "RN_11_000030",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 31125,
+						"arriveTime" : "07:00:00",
+						"departTime" : "07:00:30",
+						"stationNm" : "신도림",
+						"station_cd" : "1007",
+						"nodeId" : "RN_11_000174",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33227,
+						"arriveTime" : "07:02:30",
+						"departTime" : "07:03:00",
+						"stationNm" : "영등포",
+						"station_cd" : "1006",
+						"nodeId" : "RN_11_000418",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 38088,
+						"arriveTime" : "07:05:00",
+						"departTime" : "07:05:30",
+						"stationNm" : "신길",
+						"station_cd" : "1032",
+						"nodeId" : "RN_11_000168",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7914,
+						"arriveTime" : "07:06:30",
+						"departTime" : "07:07:00",
+						"stationNm" : "대방",
+						"station_cd" : "1005",
+						"nodeId" : "RN_11_000067",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 46130,
+						"arriveTime" : "07:09:00",
+						"departTime" : "07:09:30",
+						"stationNm" : "노량진",
+						"station_cd" : "1004",
+						"nodeId" : "RN_11_000356",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 23744,
+						"arriveTime" : "07:12:30",
+						"departTime" : "07:13:00",
+						"stationNm" : "용산",
+						"station_cd" : "1003",
+						"nodeId" : "RN_11_000428",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 39908,
+						"arriveTime" : "07:15:00",
+						"departTime" : "07:15:30",
+						"stationNm" : "남영",
+						"station_cd" : "1002",
+						"nodeId" : "RN_11_000052",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 46540,
+						"arriveTime" : "07:18:00",
+						"departTime" : "07:18:30",
+						"stationNm" : "서울역",
+						"station_cd" : "0150",
+						"nodeId" : "RN_11_000369",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 62790,
+						"arriveTime" : "07:20:30",
+						"departTime" : "07:21:00",
+						"stationNm" : "시청",
+						"station_cd" : "0151",
+						"nodeId" : "RN_11_000406",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 45685,
+						"arriveTime" : "07:23:00",
+						"departTime" : "07:23:30",
+						"stationNm" : "종각",
+						"station_cd" : "0152",
+						"nodeId" : "RN_11_000247",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 53221,
+						"arriveTime" : "07:25:00",
+						"departTime" : "07:25:30",
+						"stationNm" : "종로3가",
+						"station_cd" : "0153",
+						"nodeId" : "RN_11_000248",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 21456,
+						"arriveTime" : "07:27:00",
+						"departTime" : "07:27:30",
+						"stationNm" : "종로5가",
+						"station_cd" : "0154",
+						"nodeId" : "RN_11_000249",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 56559,
+						"arriveTime" : "07:29:00",
+						"departTime" : "07:29:30",
+						"stationNm" : "동대문",
+						"station_cd" : "0155",
+						"nodeId" : "RN_11_000379",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 43389,
+						"arriveTime" : "07:31:00",
+						"departTime" : "07:31:30",
+						"stationNm" : "동묘앞",
+						"station_cd" : "0159",
+						"nodeId" : "RN_11_000382",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 43801,
+						"arriveTime" : "07:33:00",
+						"departTime" : "07:33:30",
+						"stationNm" : "신설동",
+						"station_cd" : "0156",
+						"nodeId" : "RN_11_000180",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 23076,
+						"arriveTime" : "07:35:00",
+						"departTime" : "07:35:30",
+						"stationNm" : "제기동",
+						"station_cd" : "0157",
+						"nodeId" : "RN_11_000246",
+						"originStation" : 1716,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 69723,
+						"arriveTime" : "07:37:00",
+						"departTime" : "00:00:00",
+						"stationNm" : "청량리",
+						"station_cd" : "0158",
+						"nodeId" : "RN_11_000264",
+						"originStation" : 1716,
+						"weekTag" : 1
+					}
+				]
+			},
+			{
+				"trainNo": "K1136",
+				"timetables":[
+					{
+						"uid" : 53751,
+						"arriveTime" : "00:00:00",
+						"departTime" : "18:28:00",
+						"stationNm" : "동인천",
+						"station_cd" : "1811",
+						"nodeId" : "RN_23_000018",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 9497,
+						"arriveTime" : "18:31:00",
+						"departTime" : "18:31:30",
+						"stationNm" : "제물포",
+						"station_cd" : "1810",
+						"nodeId" : "RN_23_000046",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 48645,
+						"arriveTime" : "18:34:00",
+						"departTime" : "18:34:30",
+						"stationNm" : "주안",
+						"station_cd" : "1809",
+						"nodeId" : "RN_23_000064",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 19335,
+						"arriveTime" : "18:37:30",
+						"departTime" : "18:38:00",
+						"stationNm" : "동암",
+						"station_cd" : "1808",
+						"nodeId" : "RN_23_000017",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 24598,
+						"arriveTime" : "18:41:30",
+						"departTime" : "18:42:00",
+						"stationNm" : "부평",
+						"station_cd" : "1806",
+						"nodeId" : "RN_23_000057",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 19695,
+						"arriveTime" : "18:44:30",
+						"departTime" : "18:45:00",
+						"stationNm" : "송내",
+						"station_cd" : "1805",
+						"nodeId" : "RN_31_000106",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 7102,
+						"arriveTime" : "18:48:00",
+						"departTime" : "18:48:30",
+						"stationNm" : "부천",
+						"station_cd" : "1804",
+						"nodeId" : "RN_31_000079",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 13015,
+						"arriveTime" : "18:51:00",
+						"departTime" : "18:51:30",
+						"stationNm" : "역곡",
+						"station_cd" : "1803",
+						"nodeId" : "RN_31_000135",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 60469,
+						"arriveTime" : "18:56:30",
+						"departTime" : "18:57:00",
+						"stationNm" : "개봉",
+						"station_cd" : "1801",
+						"nodeId" : "RN_11_000011",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 66950,
+						"arriveTime" : "19:00:00",
+						"departTime" : "19:01:00",
+						"stationNm" : "구로",
+						"station_cd" : "1701",
+						"nodeId" : "RN_11_000330",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 66950,
+						"arriveTime" : "19:00:00",
+						"departTime" : "19:01:00",
+						"stationNm" : "구로",
+						"station_cd" : "1701",
+						"nodeId" : "RN_11_000030",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 33495,
+						"arriveTime" : "19:02:30",
+						"departTime" : "19:03:00",
+						"stationNm" : "신도림",
+						"station_cd" : "1007",
+						"nodeId" : "RN_11_000174",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 35570,
+						"arriveTime" : "19:05:00",
+						"departTime" : "19:05:30",
+						"stationNm" : "영등포",
+						"station_cd" : "1006",
+						"nodeId" : "RN_11_000418",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 40338,
+						"arriveTime" : "19:07:30",
+						"departTime" : "19:08:00",
+						"stationNm" : "신길",
+						"station_cd" : "1032",
+						"nodeId" : "RN_11_000168",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 9784,
+						"arriveTime" : "19:09:00",
+						"departTime" : "19:09:30",
+						"stationNm" : "대방",
+						"station_cd" : "1005",
+						"nodeId" : "RN_11_000067",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 48317,
+						"arriveTime" : "19:11:30",
+						"departTime" : "19:12:00",
+						"stationNm" : "노량진",
+						"station_cd" : "1004",
+						"nodeId" : "RN_11_000356",
+						"originStation" : 1811,
+						"weekTag" : 1
+					},
+					{
+						"uid" : 23053,
+						"arriveTime" : "19:15:00",
+						"departTime" : "00:00:00",
+						"stationNm" : "용산",
+						"station_cd" : "1003",
+						"nodeId" : "RN_11_000428",
+						"originStation" : 1811,
+						"weekTag" : 1
+					}
+				]
+			}
+		]
+	},
+	{
+		"line": 7,
+		"trains": [
+			{
+				"trainNo": "7092",
+				"timetables": [
+					{
+						"uid": 16109,
+						"arriveTime": "00:00:00",
+						"departTime": "08:24:00",
+						"stationNm": "석남",
+						"stationCd": "3763",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 55611,
+						"arriveTime": "08:27:00",
+						"departTime": "08:27:30",
+						"stationNm": "산곡",
+						"stationCd": "3762",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 69605,
+						"arriveTime": "08:29:30",
+						"departTime": "08:30:00",
+						"stationNm": "부평구청",
+						"stationCd": "3761",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 68090,
+						"arriveTime": "08:31:20",
+						"departTime": "08:31:50",
+						"stationNm": "굴포천",
+						"stationCd": "3760",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 29962,
+						"arriveTime": "08:33:00",
+						"departTime": "08:33:30",
+						"stationNm": "삼산체육관",
+						"stationCd": "3759",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 52132,
+						"arriveTime": "08:34:50",
+						"departTime": "08:35:20",
+						"stationNm": "상동",
+						"stationCd": "3758",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 48650,
+						"arriveTime": "08:36:30",
+						"departTime": "08:37:00",
+						"stationNm": "부천시청",
+						"stationCd": "3757",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 44385,
+						"arriveTime": "08:38:20",
+						"departTime": "08:38:50",
+						"stationNm": "신중동",
+						"stationCd": "3756",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 36251,
+						"arriveTime": "08:40:10",
+						"departTime": "08:40:40",
+						"stationNm": "춘의",
+						"stationCd": "3755",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 51617,
+						"arriveTime": "08:42:00",
+						"departTime": "08:42:30",
+						"stationNm": "부천종합운동장",
+						"stationCd": "3754",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 19383,
+						"arriveTime": "08:44:00",
+						"departTime": "08:44:30",
+						"stationNm": "까치울",
+						"stationCd": "3753",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 59295,
+						"arriveTime": "08:47:00",
+						"departTime": "08:47:30",
+						"stationNm": "온수",
+						"stationCd": "2752",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 51430,
+						"arriveTime": "08:49:50",
+						"departTime": "08:50:20",
+						"stationNm": "천왕",
+						"stationCd": "2751",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 21413,
+						"arriveTime": "08:52:20",
+						"departTime": "08:52:50",
+						"stationNm": "광명사거리",
+						"stationCd": "2750",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 45066,
+						"arriveTime": "08:54:40",
+						"departTime": "08:55:20",
+						"stationNm": "철산",
+						"stationCd": "2749",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 52997,
+						"arriveTime": "08:57:20",
+						"departTime": "08:58:00",
+						"stationNm": "가산디산지털단지",
+						"stationCd": "2748",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 17547,
+						"arriveTime": "08:59:20",
+						"departTime": "08:59:50",
+						"stationNm": "남구로",
+						"stationCd": "2747",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 61839,
+						"arriveTime": "09:01:20",
+						"departTime": "09:02:00",
+						"stationNm": "대림",
+						"stationCd": "2746",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 69130,
+						"arriveTime": "09:04:00",
+						"departTime": "09:04:40",
+						"stationNm": "신풍",
+						"stationCd": "2745",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 27049,
+						"arriveTime": "09:06:00",
+						"departTime": "09:06:30",
+						"stationNm": "보라매",
+						"stationCd": "2744",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 19572,
+						"arriveTime": "09:07:40",
+						"departTime": "09:08:10",
+						"stationNm": "신대방삼거리",
+						"stationCd": "2743",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 61288,
+						"arriveTime": "09:10:00",
+						"departTime": "09:10:30",
+						"stationNm": "장승배기",
+						"stationCd": "2742",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 57506,
+						"arriveTime": "09:12:00",
+						"departTime": "09:12:30",
+						"stationNm": "상도",
+						"stationCd": "2741",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 57575,
+						"arriveTime": "09:13:40",
+						"departTime": "09:14:10",
+						"stationNm": "숭실대입구",
+						"stationCd": "2740",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 68736,
+						"arriveTime": "09:16:40",
+						"departTime": "09:17:20",
+						"stationNm": "남성",
+						"stationCd": "2739",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 67081,
+						"arriveTime": "09:18:40",
+						"departTime": "09:19:20",
+						"stationNm": "이수",
+						"stationCd": "2738",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 56835,
+						"arriveTime": "09:20:50",
+						"departTime": "09:21:30",
+						"stationNm": "내방",
+						"stationCd": "2737",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 44264,
+						"arriveTime": "09:24:00",
+						"departTime": "09:24:40",
+						"stationNm": "고속터미널",
+						"stationCd": "2736",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 23743,
+						"arriveTime": "09:26:10",
+						"departTime": "09:26:40",
+						"stationNm": "반포",
+						"stationCd": "2735",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 65944,
+						"arriveTime": "09:27:50",
+						"departTime": "09:28:20",
+						"stationNm": "논현",
+						"stationCd": "2734",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 68934,
+						"arriveTime": "09:29:40",
+						"departTime": "09:30:10",
+						"stationNm": "학동",
+						"stationCd": "2733",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 39240,
+						"arriveTime": "09:31:20",
+						"departTime": "09:32:00",
+						"stationNm": "강남구청",
+						"stationCd": "2732",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 60931,
+						"arriveTime": "09:33:30",
+						"departTime": "09:34:10",
+						"stationNm": "청담",
+						"stationCd": "2731",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 64468,
+						"arriveTime": "09:36:40",
+						"departTime": "09:37:10",
+						"stationNm": "뚝섬유원지",
+						"stationCd": "2730",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 61565,
+						"arriveTime": "09:38:40",
+						"departTime": "09:39:20",
+						"stationNm": "건대입구",
+						"stationCd": "2729",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 49657,
+						"arriveTime": "09:40:40",
+						"departTime": "09:41:20",
+						"stationNm": "어린이대공원",
+						"stationCd": "2728",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 65344,
+						"arriveTime": "09:42:40",
+						"departTime": "09:43:20",
+						"stationNm": "군자",
+						"stationCd": "2727",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 8073,
+						"arriveTime": "09:44:40",
+						"departTime": "09:45:10",
+						"stationNm": "중곡",
+						"stationCd": "2726",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 18036,
+						"arriveTime": "09:46:30",
+						"departTime": "09:47:00",
+						"stationNm": "용마산",
+						"stationCd": "2725",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 31281,
+						"arriveTime": "09:48:10",
+						"departTime": "09:48:40",
+						"stationNm": "사가정",
+						"stationCd": "2724",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 62933,
+						"arriveTime": "09:49:50",
+						"departTime": "09:50:20",
+						"stationNm": "면목",
+						"stationCd": "2723",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 45305,
+						"arriveTime": "09:51:30",
+						"departTime": "09:52:10",
+						"stationNm": "상봉",
+						"stationCd": "2722",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 50319,
+						"arriveTime": "09:54:00",
+						"departTime": "09:54:30",
+						"stationNm": "중화",
+						"stationCd": "2721",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 63547,
+						"arriveTime": "09:55:50",
+						"departTime": "09:56:20",
+						"stationNm": "먹골",
+						"stationCd": "2720",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 10077,
+						"arriveTime": "09:57:30",
+						"departTime": "09:58:10",
+						"stationNm": "태릉입구",
+						"stationCd": "2719",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 51620,
+						"arriveTime": "09:59:10",
+						"departTime": "09:59:40",
+						"stationNm": "공릉",
+						"stationCd": "2718",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 57521,
+						"arriveTime": "10:01:10",
+						"departTime": "10:01:40",
+						"stationNm": "하계",
+						"stationCd": "2717",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 15343,
+						"arriveTime": "10:02:50",
+						"departTime": "10:03:20",
+						"stationNm": "중계",
+						"stationCd": "2716",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 30596,
+						"arriveTime": "10:04:40",
+						"departTime": "10:05:10",
+						"stationNm": "노원",
+						"stationCd": "2715",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 27109,
+						"arriveTime": "10:06:40",
+						"departTime": "10:07:10",
+						"stationNm": "마들",
+						"stationCd": "2714",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 25102,
+						"arriveTime": "10:09:10",
+						"departTime": "10:09:40",
+						"stationNm": "수락산",
+						"stationCd": "2713",
+						"originStation": 3763,
+						"weekTag": 1
+					},
+					{
+						"uid": 21960,
+						"arriveTime": "10:12:00",
+						"departTime": "00:00:00",
+						"stationNm": "도봉산",
+						"stationCd": "2712",
+						"originStation": 3763,
+						"weekTag": 1
+					}
+				]
+			}
+		]
+	}
+]
