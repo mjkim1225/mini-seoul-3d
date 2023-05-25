@@ -1,16 +1,19 @@
 import trains, { trainsWorker } from './train.ts';
-import {Viewer} from '@types/cesium';
 import * as Cesium from 'cesium';
+// @ts-ignore
+import {Viewer} from '@types/cesium';
 
-import loadRailways from "../data/railways.ts";
-import loadTimetable from "../data/timetables.ts";
+import getSplitRailways from "../data/splitRailways.ts";
+import getTimetable from "../data/timetables.ts";
+
+import getRailways from "./railways.ts";
 
 export default (viewer: Viewer) => {
     async function main() {
 
         const [railwaysInfo, timetablesInfo] = await Promise.all([
-            loadRailways(),
-            loadTimetable()
+            getSplitRailways(),
+            getTimetable()
         ]);
         /**
          * railways 는..
@@ -19,18 +22,16 @@ export default (viewer: Viewer) => {
          */
 
         const dataSet = trains(railwaysInfo, timetablesInfo); // worker 생성
-        trainsWorker(viewer, dataSet[0]);
-
-
+        trainsWorker(viewer, dataSet);
     }
+
+
+
 
     console.log("loader");
 
-    main();
-    // if (isMainThread) {
-    //     main();
-    // } else {
-    //     trainsWorker(dataSet[0]);
-    // }
 
+    main();
+    getRailways(viewer);
 }
+

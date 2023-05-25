@@ -5,7 +5,7 @@ const ACCESS_TOKEN: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzY
 const DEFAULT_CAMERA_OPTION: CameraOption = {
     longitude: 126.89465233162544,
     latitude: 37.493248730001874,
-    altitude: 4000,
+    altitude: 60000,
     heading: 0.0,
     pitch: -90.0,
     roll: 0.0

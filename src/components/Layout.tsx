@@ -31,7 +31,7 @@ const ToolBar = (props: BoxProps) => (
                 m: 1,
                 p: 1,
                 top: 0,
-                right: 0,
+                left: 0,
             },
             ...(Array.isArray(props?.sx) ? props?.sx : [props?.sx]),
         ]}

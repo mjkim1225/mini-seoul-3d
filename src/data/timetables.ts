@@ -17,7 +17,7 @@ export type Train = {
 }
 
 export type TimetablesInfo = {
-    line: number,
+    line: string,
     trains: Train[]
 }
 

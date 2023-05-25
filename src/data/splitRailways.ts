@@ -8,13 +8,13 @@ export type Railway = {
 }
 
 export type RailwayInfo = {
-    line: number,
+    line: string,
     railways: Railway[],
 }
 export default async function(): Promise<RailwayInfo[]> {
 
-    const data = await fetch('dataTmp/railways.json').then(res => res.json());
+    const data = await fetch('dataTmp/split_railways.json').then(res => res.json());
 
-    console.log("railways data: ", data);
+    console.log("split_railways data: ", data);
     return data;
 }
