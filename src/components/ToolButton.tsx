@@ -1,11 +1,11 @@
-import {ReactNode} from 'react';
+import React, {ReactNode} from "react";
 
 import Box from '@mui/joy/Box';
 import IconButton from '@mui/joy/IconButton';
 
 type PropsType = {
-    icon: () => ReactNode, //SvgIconProps,
-    onClick?: () => void,
+    icon: () => ReactNode,
+    onClick?: any,
 }
 const ToolButton = (props: PropsType) => (
     <Box sx={{ display: 'flex', flexDirection: 'row', gap: 1.5 }}>

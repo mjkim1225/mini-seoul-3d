@@ -1,4 +1,5 @@
-
+import React from "react";
+import map from '../map'
 // Icons import
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
@@ -11,7 +12,7 @@ import VideocamRoundedIcon from '@mui/icons-material/VideocamRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 
 import RemoveRedEyeRoundedIcon from '@mui/icons-material/RemoveRedEyeRounded';
-import ToolButton from './TooButton';
+import ToolButton from './ToolButton';
 
 import Layout from './Layout';
 
@@ -25,6 +26,10 @@ const batterySaverRoundedIcon = () => <BatterySaverRoundedIcon />;
 const layersRoundedIcon = () => <LayersRoundedIcon />;
 const videocamRoundedIcon = () => <VideocamRoundedIcon />;
 const infoRoundedIcon = () => <InfoRoundedIcon />;
+
+const zoom = (flag: boolean) => {
+    map.zoom(flag)
+}
 
 const Haeder = () => {
     const test = () => {
@@ -41,8 +46,8 @@ const Haeder = () => {
             </Layout.ToolGroup>
 
             <Layout.ToolGroup>
-                <ToolButton icon={addRoundedIcon} />
-                <ToolButton icon={removeRoundedIcon} />
+                <ToolButton icon={addRoundedIcon} onClick={() => zoom(true)} />
+                <ToolButton icon={removeRoundedIcon} onClick={() => zoom(false)}/>
             </Layout.ToolGroup>
 
             <Layout.ToolGroup>

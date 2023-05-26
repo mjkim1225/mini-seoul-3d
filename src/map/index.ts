@@ -43,11 +43,23 @@ const getSizeByZoom = () => {
     return new Cesium.Cartesian3(size*2, size, size);
 }
 
+const zoom = (flag) => {
+    const camera = viewer.camera;
+    const currentHeight = camera.positionCartographic.height;
+    if (flag) {
+        if (currentHeight < 0) return;
+        camera.zoomIn(currentHeight * 0.3);
+    } else {
+        camera.zoomOut(currentHeight * 0.3);
+    }
+}
+
 export default {
     viewer,
     getViewer: (): Viewer | null => viewer,
-    getSizeByZoom,
     setCameraView: (params: CameraOption) => setCameraView(params),
+    getSizeByZoom,
+    zoom,
     initMap: (mapId: string) => {
         Cesium.Ion.defaultAccessToken = config.ACCESS_TOKEN;
 
