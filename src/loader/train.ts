@@ -6,6 +6,9 @@ import {Units} from "@turf/helpers";
 import {Railway, RailwayInfo} from "../data/splitRailways.ts";
 import {TimetablesInfo, Train} from "../data/timetables.ts";
 
+import map from '../map'
+import datetimeUtils from '../utils/datetime.ts'
+
 import trainColor from "../data/trainColor.ts";
 
 const accDistance: number = 0.4;
@@ -13,7 +16,7 @@ const sampleUnitSec = 1;
 const options: { units?: Units } = {units: 'kilometers'};
 
 type DataSet = {
-    line?: number,
+    line?: string,
     railways?: Railway[],
     trains?: Train[]
 }
@@ -26,7 +29,6 @@ const getDistance = (start: Turf.Coord, end: Turf.Coord) => {
     return Math.round(Turf.distance(from, to, options) * 1000) / 1000
 }
 
-//1. 시간 구하는 함수 (param: 거리:km, 속도:km/h)
 const getDuration = (distance: number, velocity: number) => {
     return distance / velocity; //h
 }
@@ -47,52 +49,12 @@ const makeTimeSample = (numberOfSamples: number, startDatetime: JulianDate, tota
 }
 
 const getVelocity = (accDistance: number, noAccDistance: number, elapsedSec: number) => {
-    /*
-      Distance unit : km !!!!
-
-      elapsedSec == accSec + noAccSec
-      accSec = elapsedSec - noAccSec
-      velocity == (accDistance/accSec)*2 == noAccDistance/noAccSec
-                ==  (accDistance/(elapsedSec - noAccSec))*2
-
-      accSec == (2 * accDistance * elapsedSec) / (noAccDistance + 2 * accDistance)
-    */
     const accSec = (2 * accDistance * elapsedSec) / (noAccDistance + 2 * accDistance)
     const noAccSec = elapsedSec - accSec;
 
     const velocity = (noAccDistance / noAccSec) * 3600 // km/h
     return velocity;
 }
-
-
-const pickCartesianPoint = (cartesian3: Cartesian3) => {
-    const entity: Entity = { // 결과포인트 100m 지점
-        position: cartesian3,
-        point: {
-            color: Cesium.Color.RED,
-            pixelSize: 8,
-            heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
-        },
-    };
-    return entity
-}
-
-
-const getTodayWithTime = (timeString: string) => {
-    // ex time "08:10:05"
-    const today = new Date();
-    const [hours, minutes, seconds] = timeString.split(':').map(Number);
-    const dateWithTime = new Date(today.getFullYear(), today.getMonth(), today.getDate(), hours, minutes, seconds);
-    return dateWithTime;
-}
-const plus9hours = (jsDate: Date) => {
-    jsDate.setHours(jsDate.getHours() + 9);
-}
-
-const getJulianDate = (jsDate: Date) => {
-    return Cesium.JulianDate.fromDate(jsDate);
-}
-
 
 export default (railwaysInfo: RailwayInfo[], timetablesInfo: TimetablesInfo[]) => {
     const lines = ["line1", "line2", "line3", "line4", "line5", "line6", "line7"]
@@ -110,22 +72,8 @@ export default (railwaysInfo: RailwayInfo[], timetablesInfo: TimetablesInfo[]) =
         })
         dataSet.push(data);
     })
-
-    // dataSet.map(data =>
-    //     new Promise(resolve => {
-    //         const worker = new Worker(__filename, {workerData: {
-    //                 data
-    //             }});
-    //
-    //         worker.on('message', resolve);
-    //     })
-    // )
     return dataSet;
-
-    console.log(dataSet);
 }
-
-const trainEntityCollection = new Cesium.EntityCollection();
 
 export function trainsWorker(viewer: Viewer, dataSet: DataSet[]) {
 
@@ -137,8 +85,6 @@ export function trainsWorker(viewer: Viewer, dataSet: DataSet[]) {
         if(!trains) continue;
 
         for(let train of trains) {
-            let entity = trainEntityCollection.getById(train.trainNo);
-            if(entity) trainEntityCollection.remove(entity);
             if(railways) makeTrainEntity(viewer, line, train, railways);
         }
     }
@@ -158,7 +104,7 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         const endNode = array[index+1];
         if(!endNode) return;
 
-        // 노드아이디가 여러개 이기 때문에 코드가 안맞을 수 있음. (ex 구로) //TODO 서버에서 날라오는 데이터에따라서 필요 없을 수도 있음
+        // 노드아이디가 여러개 이기 때문에 코드가 안맞을 수 있음. (ex 구로, 병점)
         let railway = railways?.find(railway => railway.startNodeId===startNode.nodeId && railway.endNodeId===endNode.nodeId);
 
         if(!railway) {
@@ -175,12 +121,12 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
 
         const railwayCoords = railway?.coordinates;
 
-        const startDatetime = getTodayWithTime(startNode.departTime);
-        const endDatetime = getTodayWithTime(endNode.arriveTime)
-        plus9hours(startDatetime);
-        plus9hours(endDatetime);
-        const startJulianDate = getJulianDate(startDatetime);
-        const endJulianDate = getJulianDate(endDatetime);
+        const startDatetime = datetimeUtils.getTodayWithTime(startNode.departTime);
+        const endDatetime = datetimeUtils.getTodayWithTime(endNode.arriveTime)
+        datetimeUtils.plus9hours(startDatetime);
+        datetimeUtils.plus9hours(endDatetime);
+        const startJulianDate = datetimeUtils.getJulianDate(startDatetime);
+        const endJulianDate = datetimeUtils.getJulianDate(endDatetime);
         const totalElapsedSec = Cesium.JulianDate.secondsDifference(endJulianDate, startJulianDate);
 
         const feature = Turf.lineString(railwayCoords)
@@ -259,19 +205,15 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
 
     viewer.entities.add({
         id: train.trainNo,
-        position: entityPosition,
+            position: entityPosition,
         orientation: new Cesium.VelocityOrientationProperty(entityPosition), // Automatically set the vehicle's orientation to the direction it's facing.
         box: {
-            dimensions: new Cesium.Cartesian3(500,250,250),
+        dimensions: new Cesium.CallbackProperty(map.getSizeByZoom, false),
             fill: true,
-            material: Cesium.Color.fromCssColorString(trainColor[line]),
+            material: Cesium.Color.fromCssColorString(trainColor[line]).withAlpha(0.5),
             outline: true,
             outlineColor: Cesium.Color.BLACK,
             heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
         },
-
-        // label: {
-        //     text: train.trainNo
-        // },
     });
 }

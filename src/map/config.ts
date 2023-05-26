@@ -10,8 +10,13 @@ const DEFAULT_CAMERA_OPTION: CameraOption = {
     pitch: -90.0,
     roll: 0.0
 };
+const MAP_TILER = {
+    url: 'https://api.maptiler.com',
+    key: 'XSHSlYSeKVmyAEfR1ema',
+}
 
 export default {
     ACCESS_TOKEN,
-    DEFAULT_CAMERA_OPTION
+    DEFAULT_CAMERA_OPTION,
+    MAP_TILER
 };

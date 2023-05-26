@@ -15,7 +15,7 @@ export default (viewer: Viewer) => {
         }
     ]
         .forEach((railway) => {
-            const color = Cesium.Color.fromCssColorString(trainColor[railway.line]).withAlpha(0.8);
+            const color = Cesium.Color.fromCssColorString(trainColor[railway.line]).withAlpha(0.5);
             viewer.dataSources.add(Cesium.GeoJsonDataSource.load(railway.file, {
                 stroke: color,
                 fill: color,

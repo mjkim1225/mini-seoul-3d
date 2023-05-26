@@ -3,8 +3,14 @@ import * as Cesium from 'cesium';
 import {Viewer} from '@types/cesium';
 import config from './config';
 
+import datetimeUtils from "../utils/datetime.ts";
+
 let viewer: Viewer | null = null;
 
+const TRAIN_SIZE = {
+    min: 50,
+    max: 1000,
+}
 
 const setCameraView = (params: CameraOption) => {
     viewer.camera.setView({
@@ -21,28 +27,33 @@ const setCameraView = (params: CameraOption) => {
     });
 };
 
-const korTimeSetting = (timeStr: string) => {
+const setKorDateTime = (timeStr: string) => {
     // ex time "08:10:05"
-    let today = new Date();
-    if(timeStr) {
-        const [hours, minutes, seconds] = timeStr.split(':').map(Number);
-        today = new Date(today.getFullYear(), today.getMonth(), today.getDate(), hours, minutes, seconds);
-    }
-    today.setHours(today.getHours() + 9)
-    const julianDate = Cesium.JulianDate.fromDate(today);
+    const today = timeStr? datetimeUtils.getTodayWithTime(timeStr) : new Date();
+    datetimeUtils.plus9hours(today);
+    const julianDate = datetimeUtils.getJulianDate(today);
     viewer.clock.currentTime = julianDate;
+}
+
+const getSizeByZoom = () => {
+    const zoomLevel = viewer.camera.positionCartographic.height;
+    let size = zoomLevel/100;
+    size = size > TRAIN_SIZE.max ? TRAIN_SIZE.max :
+            size < TRAIN_SIZE.min ? TRAIN_SIZE.min : size;
+    return new Cesium.Cartesian3(size*2, size, size);
 }
 
 export default {
     viewer,
     getViewer: (): Viewer | null => viewer,
+    getSizeByZoom,
     setCameraView: (params: CameraOption) => setCameraView(params),
     initMap: (mapId: string) => {
         Cesium.Ion.defaultAccessToken = config.ACCESS_TOKEN;
 
         viewer = new Cesium.Viewer(mapId, {
             imageryProvider: new Cesium.UrlTemplateImageryProvider({
-                url: `https://api.maptiler.com/maps/dataviz/{z}/{x}/{y}.png?key=XSHSlYSeKVmyAEfR1ema`,
+                url: `${config.MAP_TILER.url}/maps/dataviz/{z}/{x}/{y}.png?key=${config.MAP_TILER.key}`,
                 minimumLevel: 0,
                 maximumLevel: 20
             }),
@@ -58,14 +69,13 @@ export default {
             navigationHelpButton: false, // toolbar,
             // terrain
             terrainProvider: new Cesium.CesiumTerrainProvider({
-                url: `https://api.maptiler.com/tiles/terrain-quantized-mesh-v2/?key=XSHSlYSeKVmyAEfR1ema`,
+                url: `${config.MAP_TILER.url}/tiles/terrain-quantized-mesh-v2/?key=${config.MAP_TILER.key}`,
                 requestVertexNormals: true
             }),
             // 영상
             showRenderLoopErrors: false,
             shouldAnimate: true,
         });
-
 
         viewer.scene.primitives.add(
             new Cesium.Cesium3DTileset({
@@ -77,17 +87,8 @@ export default {
 
         viewer.camera.percentageChanged = 0.01;
 
-        // const cameraAggregator = new Cesium.CameraEventAggregator(viewer.canvas);
-        //
-        // viewer.clock.onTick.addEventListener(function(){
-        //     var rightDrag = cameraAggregator.isButtonDown(Cesium.CameraEventType.RIGHT_DRAG);
-        //     if (rightDrag) {
-        //         console.log("Zooming");
-        //     }
-        // });
-
         setCameraView(config.DEFAULT_CAMERA_OPTION);
-        korTimeSetting('05:30:30');
+        setKorDateTime('05:30:30');
     },
 
 };
