@@ -3,7 +3,7 @@ import * as Cesium from 'cesium';
 import {Viewer} from '@types/cesium';
 import config from './config';
 
-import datetimeUtils from "../utils/datetime.ts";
+import datetimeUtils from "../utils/datetime";
 
 let viewer: Viewer | null = null;
 
@@ -79,6 +79,7 @@ export default {
 
         viewer.scene.primitives.add(
             new Cesium.Cesium3DTileset({
+                // @ts-ignore
                 url: Cesium.IonResource.fromAssetId(96188),
             })
         );

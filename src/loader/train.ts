@@ -3,13 +3,13 @@ import * as Cesium from 'cesium';
 import {Cartesian3, Entity, Viewer, JulianDate} from '@types/cesium';
 import * as Turf from '@turf/turf';
 import {Units} from "@turf/helpers";
-import {Railway, RailwayInfo} from "../data/splitRailways.ts";
-import {TimetablesInfo, Train} from "../data/timetables.ts";
+import {Railway, RailwayInfo} from "../data/splitRailways";
+import {TimetablesInfo, Train} from "../data/timetables";
 
 import map from '../map'
-import datetimeUtils from '../utils/datetime.ts'
+import datetimeUtils from '../utils/datetime'
 
-import trainColor from "../data/trainColor.ts";
+import trainColor from "../data/trainColor";
 
 const accDistance: number = 0.4;
 const sampleUnitSec = 1;
@@ -34,7 +34,7 @@ const getDuration = (distance: number, velocity: number) => {
 }
 
 const makeTimeSample = (numberOfSamples: number, startDatetime: JulianDate, totalSeconds: number) => {
-    let timeList = []
+    let timeList: JulianDate[] = []
     for (let i = 0; i < numberOfSamples; i++) {
         const factor = i / numberOfSamples;
         const time = Cesium.JulianDate.addSeconds(
@@ -85,7 +85,7 @@ export function trainsWorker(viewer: Viewer, dataSet: DataSet[]) {
         if(!trains) continue;
 
         for(let train of trains) {
-            if(railways) makeTrainEntity(viewer, line, train, railways);
+            if(railways && line) makeTrainEntity(viewer, line, train, railways);
         }
     }
 }
@@ -107,7 +107,7 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         // 노드아이디가 여러개 이기 때문에 코드가 안맞을 수 있음. (ex 구로, 병점)
         let railway = railways?.find(railway => railway.startNodeId===startNode.nodeId && railway.endNodeId===endNode.nodeId);
 
-        if(!railway) {
+        if(!railway) { //TODO 반대로 찾아보는 로직인데, 필요없으면 삭제해도 됨.
             railway = railways?.find(railway => railway.startNodeId===endNode.nodeId && railway.endNodeId===startNode.nodeId)
 
             if(!railway) {
@@ -129,8 +129,10 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         const endJulianDate = datetimeUtils.getJulianDate(endDatetime);
         const totalElapsedSec = Cesium.JulianDate.secondsDifference(endJulianDate, startJulianDate);
 
+        // @ts-ignore
         const feature = Turf.lineString(railwayCoords)
         const reversedLine = [...railwayCoords].reverse();
+        // @ts-ignore
         const reversedFeature = Turf.lineString(reversedLine)
 
         // 시작지점(속도증가), 속도증가종료지점, -----[속도일정]-----, 속도감소시작지점, 종료지점
@@ -150,19 +152,17 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         const accUpFeature = Turf.lineSliceAlong(feature, 0, accDistance);
         const noAccFeature = Turf.lineSlice(Turf.point(accUpEndPoi), Turf.point(accDownStartPoi), feature);
 
-        let locationList = [];
+        let locationList:number[][] = [];
         // - 1 구간 구하기
-        const distanceList = [];
-        let distance = 0;
+        const distanceList: number[] = [];
+        let distance: number = 0;
         let length = Turf.length(accUpFeature);
         let i = 0;
         while(distance < length) {
             const sec = i++ * sampleUnitSec;
             distance = (1 / 2) * accVelocity * (((sec) * (sec)) / 3600); //km
             distanceList.push(distance);
-
-            const poi = Turf.getCoord(Turf.along(feature, distance));
-            locationList.push(poi);
+            locationList.push(Turf.getCoord(Turf.along(feature, distance)));
         }
 
         // - 2 구간 구하기
@@ -170,8 +170,7 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         const gap = distanceList[distanceList.length - 1] - distanceList[distanceList.length - 2];
         while(distance < length) {
             distance = distance + gap;
-            const poi = Turf.getCoord(Turf.along(feature, distance));
-            locationList.push(poi);
+            locationList.push(Turf.getCoord(Turf.along(feature, distance)));
         }
 
         // - 3 구간 구하기
@@ -181,8 +180,7 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         while(distance < length) {
             const gap = (distanceList[i++] - distanceList[i])
             distance = distance + gap;
-            const poi = distance ? Turf.getCoord(Turf.along(feature, distance)): Turf.getCoords(feature).reverse()[0];
-            locationList.push(poi);
+            locationList.push(distance ? Turf.getCoord(Turf.along(feature, distance)): Turf.getCoords(feature).reverse()[0]);
         }
 
         // - timesample
@@ -192,7 +190,8 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         for(let time of timeSampleList) {
             if( j !== 0) {
                 const location = locationList[j];
-                entityPosition.addSample(time, (new Cesium.Cartesian3.fromDegrees(location[0], location[1])));
+                // @ts-ignore
+                entityPosition.addSample(time, new Cesium.Cartesian3.fromDegrees(location[0], location[1]) );
             }
             j++;
         }

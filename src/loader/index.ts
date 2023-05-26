@@ -1,12 +1,11 @@
-import trains, { trainsWorker } from './train.ts';
-import * as Cesium from 'cesium';
+import trains, { trainsWorker } from './train';
 // @ts-ignore
 import {Viewer} from '@types/cesium';
 
-import getSplitRailways from "../data/splitRailways.ts";
-import getTimetable from "../data/timetables.ts";
+import getSplitRailways from "../data/splitRailways";
+import getTimetable from "../data/timetables";
 
-import getRailways from "./railways.ts";
+import getRailways from "./railways";
 
 export default (viewer: Viewer) => {
     async function main() {

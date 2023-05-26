@@ -2,7 +2,7 @@
 import * as Cesium from 'cesium';
 // @ts-ignore
 import {Cartesian3, Entity, Viewer, JulianDate} from '@types/cesium';
-import trainColor from "../data/trainColor.ts";
+import trainColor from "../data/trainColor";
 
 export default (viewer: Viewer) => {
 
