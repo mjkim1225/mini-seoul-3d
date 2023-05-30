@@ -3,11 +3,10 @@ import * as Cesium from 'cesium';
 import {Viewer} from '@types/cesium';
 import config from './config';
 
-import datetimeUtils from "../utils/datetime";
+import { getTodayWithTime, plus9hours, getJulianDate } from "../utils/datetime";
 import {ScreenSpaceEventHandler} from "cesium";
 
 let viewer: Viewer | null = null;
-let store: any = null;
 
 let pickedEntity: Cesium.Entity | null = null;
 
@@ -37,9 +36,9 @@ const setCameraView = (params: CameraOption) => {
 
 const setKorDateTime = (timeStr: string | void) => {
     // ex time "08:10:05"
-    const today = timeStr? datetimeUtils.getTodayWithTime(timeStr) : new Date();
-    datetimeUtils.plus9hours(today);
-    const julianDate = datetimeUtils.getJulianDate(today);
+    const today = timeStr? getTodayWithTime(timeStr) : new Date();
+    plus9hours(today);
+    const julianDate = getJulianDate(today);
     viewer.clock.currentTime = julianDate;
 }
 
@@ -77,7 +76,7 @@ const findDataSourceByName = (name) => {
 
 let entitySearchHandler: ScreenSpaceEventHandler | void | null = null;
 
-const setTrainHoverHandler = (set: boolean, callback: (entity: Cesium.Entity) => void) => {
+const setTrainHoverHandler = (set: boolean, callback: (entity: Cesium.Entity | null) => void) => {
     if(set) {
         if(!entitySearchHandler) {
             let pickedObject;
@@ -86,6 +85,7 @@ const setTrainHoverHandler = (set: boolean, callback: (entity: Cesium.Entity) =>
             entitySearchHandler.setInputAction(function (movement) {
                 if(pickedObject?.id?.box) {
                     pickedObject.id.box.outlineColor = Cesium.Color.BLACK;
+                    callback(null)
                 }
                 pickedObject = viewer.scene.drillPick(movement.endPosition)[0];
                 if(Cesium.defined(pickedObject) && pickedObject.id && !(trainDataSource.entities.values.indexOf(pickedObject.id) < 0)) {
@@ -153,8 +153,5 @@ export default {
         setCameraView(config.DEFAULT_CAMERA_OPTION);
         setKorDateTime();
     },
-    setStore: (store) => {
-        store = store;
-    }
 
 };

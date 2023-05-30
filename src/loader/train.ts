@@ -7,9 +7,11 @@ import {Railway, RailwayInfo} from "../data/splitRailways";
 import {TimetablesInfo, Train} from "../data/timetables";
 
 import map from '../map'
-import datetimeUtils from '../utils/datetime'
+import { plus9hours, getJulianDate, getTodayWithTime, Period } from '../utils/datetime'
 
 import trainColor from "../data/trainColor";
+
+import { StationInfo } from '../utils/StationInfo'
 
 const accDistance: number = 0.4;
 const sampleUnitSec = 1;
@@ -96,6 +98,7 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
 
     //1. entity 만들기
     const entityPosition =  new Cesium.SampledPositionProperty();
+    const stationInfoList: StationInfo[] = [];
 
     const dataSource = map.findDataSourceByName(map.DATASOURCE_NAME.TRAIN); //TODO 얘를 좀 딴데로 옮길 수 있을것같은데... 매개변수로 전달하긴 더 싫고..ㅜㅜ
 
@@ -115,7 +118,7 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
             if(!railway) {
                 noRailway = true;
                 console.log(`There is no railway info ${train.trainNo} : [${startNode.stationNm} (${startNode.nodeId}) -> ${endNode.stationNm} (${endNode.nodeId})]`)
-                return;;
+                return;
             }else{
                 railway.coordinates.reverse();
             }
@@ -123,12 +126,26 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
 
         const railwayCoords = railway?.coordinates;
 
-        const startDatetime = datetimeUtils.getTodayWithTime(startNode.departTime);
-        const endDatetime = datetimeUtils.getTodayWithTime(endNode.arriveTime)
-        datetimeUtils.plus9hours(startDatetime);
-        datetimeUtils.plus9hours(endDatetime);
-        const startJulianDate = datetimeUtils.getJulianDate(startDatetime);
-        const endJulianDate = datetimeUtils.getJulianDate(endDatetime);
+        const startDatetime = getTodayWithTime(startNode.departTime);
+        const endDatetime = getTodayWithTime(endNode.arriveTime)
+        plus9hours(startDatetime);
+        plus9hours(endDatetime);
+
+        stationInfoList.push(
+            new StationInfo(`이번역: ${startNode.stationNm}, 다음역: ${endNode.stationNm}`, new Period(startDatetime, endDatetime))
+        )
+        if(startNode.arriveTime !== '00:00:00' || startNode.departTime !== '00:00:00') {
+            const arrive = getTodayWithTime(startNode.arriveTime);
+            const depart = getTodayWithTime(startNode.departTime)
+            plus9hours(arrive);
+            plus9hours(depart);
+            stationInfoList.push(
+                new StationInfo(`현재역: ${startNode.stationNm}`, new Period(arrive, depart))
+            )
+        }
+
+        const startJulianDate = getJulianDate(startDatetime);
+        const endJulianDate = getJulianDate(endDatetime);
         const totalElapsedSec = Cesium.JulianDate.secondsDifference(endJulianDate, startJulianDate);
 
         // @ts-ignore
@@ -206,8 +223,8 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
 
     dataSource.entities.add({
         id: train.trainNo,
-        info: "test" + train.trainNo,
         position: entityPosition,
+        info: stationInfoList,
         orientation: new Cesium.VelocityOrientationProperty(entityPosition), // Automatically set the vehicle's orientation to the direction it's facing.
         box: {
         dimensions: new Cesium.CallbackProperty(map.getSizeByZoom, false),

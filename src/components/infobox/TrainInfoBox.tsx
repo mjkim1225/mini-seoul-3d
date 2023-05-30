@@ -5,13 +5,32 @@ import CardOverflow from '@mui/joy/CardOverflow';
 import Divider from '@mui/joy/Divider';
 import Typography from '@mui/joy/Typography';
 
-import map from '../../map';
 import useTrainStore from "../../store/useTrainStore";
+import { plus9hours } from "../../utils/datetime";
+import { StationInfo } from '../../utils/StationInfo'
+
 const TrainInfoBox = () => {
 
     const { entity } = useTrainStore();
 
+    const stationInfo = useMemo(() => {
+        let info: StationInfo | null = null;
+        if(entity) {
+            let now = new Date()
+            plus9hours(now);
+            // @ts-ignore
+            const infoList = entity?.info as StationInfo[];
+            infoList.map( i => {
+                if(i.period.contains(now)) {
+                    info = i;
+                }
+            })
+        }
+        return info;
+    }, [entity]);
+
     return <>
+        {entity && stationInfo ?
             <Card variant="outlined" sx={{
                 background: 'rgba(255, 255, 255, 0.5)',
                 width: 180, mt: 1
@@ -20,8 +39,11 @@ const TrainInfoBox = () => {
                     {entity ? entity.id : '정보'}
                 </Typography>
                 <Typography level="body2" sx={{ mt: 0.5, mb: 1 }}>
-                    { // @ts-ignore
-                        entity ? entity.info : '정보'
+                    {
+                        entity ?
+                            // @ts-ignore
+                            stationInfo?.info
+                            : '정보'
                     }
                 </Typography>
                 <Divider />
@@ -40,6 +62,7 @@ const TrainInfoBox = () => {
                     </Typography>
                 </CardOverflow>
             </Card>
+        : <></>}
     </>
 }
 
