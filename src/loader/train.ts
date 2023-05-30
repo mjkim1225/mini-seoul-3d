@@ -112,18 +112,6 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         // 노드아이디가 여러개 이기 때문에 코드가 안맞을 수 있음. (ex 구로, 병점)
         let railway = railways?.find(railway => railway.startNodeId===startNode.nodeId && railway.endNodeId===endNode.nodeId);
 
-        if(!railway) { //TODO 반대로 찾아보는 로직인데, 필요없으면 삭제해도 됨.
-            railway = railways?.find(railway => railway.startNodeId===endNode.nodeId && railway.endNodeId===startNode.nodeId)
-
-            if(!railway) {
-                noRailway = true;
-                console.log(`There is no railway info ${train.trainNo} : [${startNode.stationNm} (${startNode.nodeId}) -> ${endNode.stationNm} (${endNode.nodeId})]`)
-                return;
-            }else{
-                railway.coordinates.reverse();
-            }
-        }
-
         const railwayCoords = railway?.coordinates;
 
         const startDatetime = getTodayWithTime(startNode.departTime);
@@ -131,9 +119,6 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         plus9hours(startDatetime);
         plus9hours(endDatetime);
 
-        stationInfoList.push(
-            new StationInfo(`이번역: ${startNode.stationNm}, 다음역: ${endNode.stationNm}`, new Period(startDatetime, endDatetime))
-        )
         if(startNode.arriveTime !== '00:00:00' || startNode.departTime !== '00:00:00') {
             const arrive = getTodayWithTime(startNode.arriveTime);
             const depart = getTodayWithTime(startNode.departTime)
@@ -143,6 +128,10 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
                 new StationInfo(`현재역: ${startNode.stationNm}`, new Period(arrive, depart))
             )
         }
+
+        stationInfoList.push(
+            new StationInfo(`이번역: ${startNode.stationNm}, 다음역: ${endNode.stationNm}`, new Period(startDatetime, endDatetime))
+        )
 
         const startJulianDate = getJulianDate(startDatetime);
         const endJulianDate = getJulianDate(endDatetime);
