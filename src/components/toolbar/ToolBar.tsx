@@ -1,5 +1,5 @@
 import React from "react";
-import map from '../map'
+import map from '../../map'
 // Icons import
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
@@ -14,7 +14,7 @@ import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import RemoveRedEyeRoundedIcon from '@mui/icons-material/RemoveRedEyeRounded';
 import ToolButton from './ToolButton';
 
-import Layout from './Layout';
+import Layout from '../Layout';
 
 const searchRoundedIcon = () => <SearchRoundedIcon />;
 const addRoundedIcon = () => <AddRoundedIcon />;
@@ -32,17 +32,11 @@ const zoom = (flag: boolean) => {
 }
 
 const Haeder = () => {
-    const test = () => {
-        console.log('test');
-    };
 
     return (
         <Layout.ToolBar>
             <Layout.ToolGroup>
-                <ToolButton
-                    icon={searchRoundedIcon}
-                    onClick={test}
-                />
+                <ToolButton icon={searchRoundedIcon} />
             </Layout.ToolGroup>
 
             <Layout.ToolGroup>
