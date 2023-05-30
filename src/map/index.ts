@@ -7,6 +7,9 @@ import datetimeUtils from "../utils/datetime";
 import {ScreenSpaceEventHandler} from "cesium";
 
 let viewer: Viewer | null = null;
+let store: any = null;
+
+let pickedEntity: Cesium.Entity | null = null;
 
 const TRAIN_SIZE = {
     min: 50,
@@ -74,7 +77,7 @@ const findDataSourceByName = (name) => {
 
 let entitySearchHandler: ScreenSpaceEventHandler | void | null = null;
 
-const setTrainHoverHandler = (set) => {
+const setTrainHoverHandler = (set: boolean, callback: (entity: Cesium.Entity) => void) => {
     if(set) {
         if(!entitySearchHandler) {
             let pickedObject;
@@ -87,6 +90,8 @@ const setTrainHoverHandler = (set) => {
                 pickedObject = viewer.scene.drillPick(movement.endPosition)[0];
                 if(Cesium.defined(pickedObject) && pickedObject.id && !(trainDataSource.entities.values.indexOf(pickedObject.id) < 0)) {
                     pickedObject.id.box.outlineColor = Cesium.Color.WHITE;
+                    pickedEntity = pickedObject.id as Cesium.Entity;
+                    callback(pickedEntity);
                 }
 
             }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
@@ -104,6 +109,7 @@ export default {
     getSizeByZoom,
     zoom,
     findDataSourceByName,
+    setTrainHoverHandler,
     initMap: (mapId: string) => {
         Cesium.Ion.defaultAccessToken = config.ACCESS_TOKEN;
 
@@ -146,7 +152,9 @@ export default {
 
         setCameraView(config.DEFAULT_CAMERA_OPTION);
         setKorDateTime();
-        setTrainHoverHandler(true);
     },
+    setStore: (store) => {
+        store = store;
+    }
 
 };

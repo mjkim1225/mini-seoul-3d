@@ -11,24 +11,12 @@ import ToolBar from './components/toolbar/ToolBar';
 import theme from './styled/theme';
 
 import map from './map';
+import Map from './components/map';
 import loader from './loader';
 import InfoBox from "./components/infobox";
 
 const mapId = 'cesiumContainer';
 const App = () => {
-    useEffect(() => {
-        const viewer = map.getViewer();
-        if (viewer) {
-            viewer.destroy();
-
-            const mapContainer = document.getElementById(mapId);
-            if (mapContainer && mapContainer.hasChildNodes()) {
-                mapContainer.firstChild? mapContainer.removeChild(mapContainer.firstChild) : null;
-            }
-        }
-        map.initMap(mapId);
-        loader(map.getViewer());
-    }, [mapId]);
 
     return (
         <CssVarsProvider
@@ -37,7 +25,7 @@ const App = () => {
             theme={theme}
         >
             <CssBaseline />
-            <div id={mapId}/>
+            <Map />
             <ToolBar />
             <InfoBox />
 

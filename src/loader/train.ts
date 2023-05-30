@@ -206,6 +206,7 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
 
     dataSource.entities.add({
         id: train.trainNo,
+        info: "test" + train.trainNo,
         position: entityPosition,
         orientation: new Cesium.VelocityOrientationProperty(entityPosition), // Automatically set the vehicle's orientation to the direction it's facing.
         box: {
