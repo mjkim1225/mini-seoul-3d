@@ -110,7 +110,7 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         if(!endNode) return;
 
         // 노드아이디가 여러개 이기 때문에 코드가 안맞을 수 있음. (ex 구로, 병점)
-        let railway = railways?.find(railway => railway.startNodeId===startNode.nodeId && railway.endNodeId===endNode.nodeId);
+        const railway = railways?.find(railway => railway.startNodeId===startNode.nodeId && railway.endNodeId===endNode.nodeId);
 
         const railwayCoords = railway?.coordinates;
 
@@ -130,7 +130,7 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         }
 
         stationInfoList.push(
-            new StationInfo(`이번역: ${startNode.stationNm}, 다음역: ${endNode.stationNm}`, new Period(startDatetime, endDatetime))
+            new StationInfo(`전역: ${startNode.stationNm}, 다음역: ${endNode.stationNm}`, new Period(startDatetime, endDatetime))
         )
 
         const startJulianDate = getJulianDate(startDatetime);
@@ -139,6 +139,7 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
 
         // @ts-ignore
         const feature = Turf.lineString(railwayCoords)
+        // @ts-ignore
         const reversedLine = [...railwayCoords].reverse();
         // @ts-ignore
         const reversedFeature = Turf.lineString(reversedLine)

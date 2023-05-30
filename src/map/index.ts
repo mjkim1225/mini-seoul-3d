@@ -103,6 +103,7 @@ const setTrainHoverHandler = (set: boolean, callback: (entity: Cesium.Entity | n
 
 export default {
     viewer,
+    getCurrentTime: () : Cesium.JulianDate => viewer.clock.currentTime,
     DATASOURCE_NAME,
     getViewer: (): Viewer | null => viewer,
     setCameraView,

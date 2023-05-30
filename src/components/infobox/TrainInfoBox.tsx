@@ -1,5 +1,7 @@
 import React, {useMemo} from "react";
 
+import * as Cesium from 'cesium'
+
 import Card from '@mui/joy/Card';
 import CardOverflow from '@mui/joy/CardOverflow';
 import Divider from '@mui/joy/Divider';
@@ -9,6 +11,8 @@ import useTrainStore from "../../store/useTrainStore";
 import { plus9hours } from "../../utils/datetime";
 import { StationInfo } from '../../utils/StationInfo'
 
+import map from '../../map'
+
 const TrainInfoBox = () => {
 
     const { entity } = useTrainStore();
@@ -16,8 +20,7 @@ const TrainInfoBox = () => {
     const stationInfo = useMemo(() => {
         let info: StationInfo | null = null;
         if(entity) {
-            let now = new Date()
-            plus9hours(now);
+            const now = Cesium.JulianDate.toDate(map.getCurrentTime());
             // @ts-ignore
             const infoList = entity?.info as StationInfo[];
             infoList.map( i => {
