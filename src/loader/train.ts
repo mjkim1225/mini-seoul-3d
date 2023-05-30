@@ -97,6 +97,8 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
     //1. entity 만들기
     const entityPosition =  new Cesium.SampledPositionProperty();
 
+    const dataSource = map.findDataSourceByName(map.DATASOURCE_NAME.TRAIN); //TODO 얘를 좀 딴데로 옮길 수 있을것같은데... 매개변수로 전달하긴 더 싫고..ㅜㅜ
+
     let noRailway = false;
     //2. 시간과 속도, 가속도 계산
     timetable.forEach((node, index, array) => {
@@ -202,9 +204,9 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
 
     // console.log(`${train.trainNo}: ${train.timetables[0].departTime} ~ ${train.timetables[train.timetables.length-1].arriveTime}`)
 
-    viewer.entities.add({
+    dataSource.entities.add({
         id: train.trainNo,
-            position: entityPosition,
+        position: entityPosition,
         orientation: new Cesium.VelocityOrientationProperty(entityPosition), // Automatically set the vehicle's orientation to the direction it's facing.
         box: {
         dimensions: new Cesium.CallbackProperty(map.getSizeByZoom, false),

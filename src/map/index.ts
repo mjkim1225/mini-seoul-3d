@@ -4,12 +4,17 @@ import {Viewer} from '@types/cesium';
 import config from './config';
 
 import datetimeUtils from "../utils/datetime";
+import {ScreenSpaceEventHandler} from "cesium";
 
 let viewer: Viewer | null = null;
 
 const TRAIN_SIZE = {
     min: 50,
     max: 1000,
+}
+
+const DATASOURCE_NAME = {
+    TRAIN: 'train',
 }
 
 const setCameraView = (params: CameraOption) => {
@@ -27,7 +32,7 @@ const setCameraView = (params: CameraOption) => {
     });
 };
 
-const setKorDateTime = (timeStr: string) => {
+const setKorDateTime = (timeStr: string | void) => {
     // ex time "08:10:05"
     const today = timeStr? datetimeUtils.getTodayWithTime(timeStr) : new Date();
     datetimeUtils.plus9hours(today);
@@ -54,12 +59,51 @@ const zoom = (flag) => {
     }
 }
 
+const findDataSourceByName = (name) => {
+    let dataSource = viewer.dataSources.getByName(name);
+    if (dataSource.length === 0) {
+        dataSource = new Cesium.CustomDataSource();
+        dataSource.name = name;
+        viewer.dataSources.add(dataSource);
+    } else {
+        dataSource = dataSource[0];
+    }
+    return dataSource;
+}
+
+
+let entitySearchHandler: ScreenSpaceEventHandler | void | null = null;
+
+const setTrainHoverHandler = (set) => {
+    if(set) {
+        if(!entitySearchHandler) {
+            let pickedObject;
+            const trainDataSource = findDataSourceByName(DATASOURCE_NAME.TRAIN);
+            entitySearchHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+            entitySearchHandler.setInputAction(function (movement) {
+                if(pickedObject?.id?.box) {
+                    pickedObject.id.box.outlineColor = Cesium.Color.BLACK;
+                }
+                pickedObject = viewer.scene.drillPick(movement.endPosition)[0];
+                if(Cesium.defined(pickedObject) && pickedObject.id && !(trainDataSource.entities.values.indexOf(pickedObject.id) < 0)) {
+                    pickedObject.id.box.outlineColor = Cesium.Color.WHITE;
+                }
+
+            }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+        }
+    }else {
+        entitySearchHandler = entitySearchHandler && entitySearchHandler.destroy();
+    }
+}
+
 export default {
     viewer,
+    DATASOURCE_NAME,
     getViewer: (): Viewer | null => viewer,
-    setCameraView: (params: CameraOption) => setCameraView(params),
+    setCameraView,
     getSizeByZoom,
     zoom,
+    findDataSourceByName,
     initMap: (mapId: string) => {
         Cesium.Ion.defaultAccessToken = config.ACCESS_TOKEN;
 
@@ -101,7 +145,8 @@ export default {
         viewer.camera.percentageChanged = 0.01;
 
         setCameraView(config.DEFAULT_CAMERA_OPTION);
-        setKorDateTime('05:30:30');
+        setKorDateTime();
+        setTrainHoverHandler(true);
     },
 
 };
