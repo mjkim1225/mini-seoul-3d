@@ -31,7 +31,7 @@ const zoom = (flag: boolean) => {
     map.zoom(flag)
 }
 
-const Haeder = () => {
+const ToolBar = () => {
 
     return (
         <Layout.ToolBar>
@@ -64,4 +64,4 @@ const Haeder = () => {
     );
 };
 
-export default Haeder;
+export default ToolBar;
