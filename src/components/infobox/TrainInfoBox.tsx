@@ -8,7 +8,6 @@ import Divider from '@mui/joy/Divider';
 import Typography from '@mui/joy/Typography';
 
 import useTrainStore from "../../store/useTrainStore";
-import { plus9hours } from "../../utils/datetime";
 import { StationInfo } from '../../utils/StationInfo'
 
 import map from '../../map'
@@ -22,7 +21,7 @@ const TrainInfoBox = () => {
         if(entity) {
             const now = Cesium.JulianDate.toDate(map.getCurrentTime());
             // @ts-ignore
-            const infoList = entity?.info as StationInfo[];
+            const infoList = entity?.description.getValue() as StationInfo[];
             infoList.map( i => {
                 if(i.period.contains(now)) {
                     info = i;
