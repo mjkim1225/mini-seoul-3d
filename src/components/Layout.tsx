@@ -55,8 +55,27 @@ const ToolGroup = (props: BoxProps) => (
     />
 );
 
+const InfoBox = (props: BoxProps) => (
+    <Box
+        component="div"
+        className="ToolBar"
+        {...props}
+        sx={[
+            {
+                position: 'absolute',
+                m: 1,
+                p: 1,
+                top: 0,
+                right: 0,
+            },
+            ...(Array.isArray(props?.sx) ? props?.sx : [props?.sx]),
+        ]}
+    />
+)
+
 export default {
     Root,
     ToolBar,
-    ToolGroup
+    ToolGroup,
+    InfoBox
 };

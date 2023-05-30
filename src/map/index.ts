@@ -118,7 +118,7 @@ export default {
             // timeline: false,
             geocoder: false, // toolbar
             homeButton: false, // toolbar
-            baseLayerPicker: true, // toolbar
+            baseLayerPicker: false, // toolbar
             sceneModePicker: false, // toolbar
             infoBox: false,
             selectionIndicator: false,

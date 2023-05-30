@@ -1,17 +1,18 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 // mui
 import CssBaseline from '@mui/joy/CssBaseline';
 import { CssVarsProvider } from '@mui/joy/styles';
 
 
-import ToolBar from './components/ToolBar';
+import ToolBar from './components/toolbar/ToolBar';
 
 // custom
 import theme from './styled/theme';
 
 import map from './map';
 import loader from './loader';
+import InfoBox from "./components/infobox";
 
 const mapId = 'cesiumContainer';
 const App = () => {
@@ -36,8 +37,9 @@ const App = () => {
             theme={theme}
         >
             <CssBaseline />
-            <div id={mapId} />
+            <div id={mapId}/>
             <ToolBar />
+            <InfoBox />
 
         </CssVarsProvider>
     );
