@@ -5,6 +5,7 @@ import config from './config';
 
 import { getTodayWithTime, plus9hours, getJulianDate } from "../utils/datetime";
 import {ScreenSpaceEventHandler} from "cesium";
+import {CameraOption} from "./types";
 
 let viewer: Viewer | null = null;
 

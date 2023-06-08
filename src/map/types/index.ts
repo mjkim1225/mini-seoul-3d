@@ -1,4 +1,4 @@
-type CameraOption = {
+export type CameraOption = {
     longitude: number,
     latitude: number,
     altitude: number,

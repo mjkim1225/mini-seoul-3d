@@ -3,8 +3,7 @@ import * as Cesium from 'cesium';
 import {Cartesian3, Entity, Viewer, JulianDate} from '@types/cesium';
 import * as Turf from '@turf/turf';
 import {Units} from "@turf/helpers";
-import {Railway, RailwayInfo} from "../data/splitRailways";
-import {TimetablesInfo, Train} from "../data/timetables";
+import {Railway, RailwayInfo, Train, TimetablesInfo} from "../data/types";
 
 import map from '../map'
 import { plus9hours, getJulianDate, getTodayWithTime, Period } from '../utils/datetime'
