@@ -6,7 +6,7 @@ import loader from '../../loader';
 import useTrainStore from "../../store/useTrainStore";
 
 const mapId = 'cesiumContainer';
-const App = () => {
+const Map = () => {
 
     const { setEntity, removeEntity } = useTrainStore()
     useEffect(() => {
@@ -30,4 +30,4 @@ const App = () => {
     return <div id={mapId}/>;
 };
 
-export default App;
+export default Map;
