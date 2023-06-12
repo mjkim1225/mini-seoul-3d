@@ -8,7 +8,8 @@ import useTrainStore from "../../store/useTrainStore";
 const mapId = 'cesiumContainer';
 const Map = () => {
 
-    const { setEntity, removeEntity } = useTrainStore()
+    const { setEntity, removeEntity } = useTrainStore();
+
     useEffect(() => {
         const viewer = map.getViewer();
         const mapContainer = document.getElementById(mapId);
@@ -22,6 +23,9 @@ const Map = () => {
         map.initMap(mapId);
         map.setTrainHoverHandler(true, (entity: Cesium.Entity| null) => {
             entity == null ? removeEntity() : setEntity(entity);
+        })
+        map.setTrainClickHandler(true, (entity: Cesium.Entity| null) => {
+            console.log(entity);
         })
         // map.store
         loader(map.getViewer());

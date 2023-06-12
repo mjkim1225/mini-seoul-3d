@@ -74,16 +74,16 @@ const findDataSourceByName = (name) => {
     return dataSource;
 }
 
-
-let entitySearchHandler: ScreenSpaceEventHandler | void | null = null;
+let entityHoverHandler: ScreenSpaceEventHandler | void | null = null;
+let entityClickHandler: ScreenSpaceEventHandler | void | null = null;
 
 const setTrainHoverHandler = (set: boolean, callback: (entity: Cesium.Entity | null) => void) => {
     if(set) {
-        if(!entitySearchHandler) {
+        if(!entityHoverHandler) {
             let pickedObject;
             const trainDataSource = findDataSourceByName(DATASOURCE_NAME.TRAIN);
-            entitySearchHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
-            entitySearchHandler.setInputAction(function (movement) {
+            entityHoverHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+            entityHoverHandler.setInputAction(function (movement) {
                 if(pickedObject?.id?.box) {
                     pickedObject.id.box.outlineColor = Cesium.Color.BLACK;
                     callback(null)
@@ -98,7 +98,30 @@ const setTrainHoverHandler = (set: boolean, callback: (entity: Cesium.Entity | n
             }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
         }
     }else {
-        entitySearchHandler = entitySearchHandler && entitySearchHandler.destroy();
+        entityHoverHandler = entityHoverHandler && entityHoverHandler.destroy();
+    }
+}
+
+const setTrainClickHandler = (set: boolean, callback: (entity: Cesium.Entity | null) => void) => {
+    if(set) {
+        if(!entityClickHandler) {
+            entityClickHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+            entityClickHandler.setInputAction(function (movement) {
+                const trainDataSource = findDataSourceByName(DATASOURCE_NAME.TRAIN);
+                const pickedObject = viewer.scene.pick(movement.position);
+                if(Cesium.defined(pickedObject) && pickedObject.id && !(trainDataSource.entities.values.indexOf(pickedObject.id) < 0)) {
+                    const pickedEntity = pickedObject.id;
+                    viewer.clock.shouldAnimate = true;
+                    viewer.trackedEntity = pickedEntity;
+
+                    callback(pickedObject.id);
+                }else {
+                    viewer.trackedEntity = undefined;
+                }
+            }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+        }
+    }else {
+        entityClickHandler = entityClickHandler && entityClickHandler.destroy();
     }
 }
 
@@ -112,16 +135,19 @@ export default {
     zoom,
     findDataSourceByName,
     setTrainHoverHandler,
+    setTrainClickHandler,
     initMap: (mapId: string) => {
         Cesium.Ion.defaultAccessToken = config.ACCESS_TOKEN;
 
         viewer = new Cesium.Viewer(mapId, {
-            imageryProvider: new Cesium.UrlTemplateImageryProvider({
-                url: `${config.MAP_TILER.url}/maps/dataviz/{z}/{x}/{y}.png?key=${config.MAP_TILER.key}`,
-                minimumLevel: 0,
-                maximumLevel: 20
-            }),
-           //animation: false,
+                imageryProvider: new Cesium.UrlTemplateImageryProvider({
+                    url: `${config.MAP_TILER.url}/maps/dataviz/{z}/{x}/{y}.png?key=${config.MAP_TILER.key}`,
+                    minimumLevel: 0,
+                    maximumLevel: 20
+                }
+            ),
+            shouldAnimate: true,
+            // animation: true,
             fullscreenButton: false,
             // timeline: false,
             geocoder: false, // toolbar
@@ -138,7 +164,6 @@ export default {
             }),
             // 영상
             showRenderLoopErrors: false,
-            shouldAnimate: true,
         });
 
         viewer.scene.primitives.add(

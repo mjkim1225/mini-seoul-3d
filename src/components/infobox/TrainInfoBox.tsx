@@ -21,7 +21,7 @@ const TrainInfoBox = () => {
         if(entity) {
             const now = Cesium.JulianDate.toDate(map.getCurrentTime());
             // @ts-ignore
-            const infoList = entity?.description.getValue() as StationInfo[];
+            const infoList = entity?.description.getValue().station as StationInfo[];
             infoList.map( i => {
                 if(i.period.contains(now)) {
                     info = i;
