@@ -12,7 +12,7 @@ let viewer: Viewer | null = null;
 let pickedEntity: Cesium.Entity | null = null;
 
 const TRAIN_SIZE = {
-    min: 50,
+    min: 10,
     max: 1000,
 }
 
@@ -48,7 +48,7 @@ const getSizeByZoom = () => {
     let size = zoomLevel/100;
     size = size > TRAIN_SIZE.max ? TRAIN_SIZE.max :
             size < TRAIN_SIZE.min ? TRAIN_SIZE.min : size;
-    return new Cesium.Cartesian3(size*2, size, size);
+    return size
 }
 
 const zoom = (flag) => {
@@ -84,13 +84,11 @@ const setTrainHoverHandler = (set: boolean, callback: (entity: Cesium.Entity | n
             const trainDataSource = findDataSourceByName(DATASOURCE_NAME.TRAIN);
             entityHoverHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
             entityHoverHandler.setInputAction(function (movement) {
-                if(pickedObject?.id?.box) {
-                    pickedObject.id.box.outlineColor = Cesium.Color.BLACK;
+                if(pickedObject?.id) {
                     callback(null)
                 }
                 pickedObject = viewer.scene.drillPick(movement.endPosition)[0];
                 if(Cesium.defined(pickedObject) && pickedObject.id && !(trainDataSource.entities.values.indexOf(pickedObject.id) < 0)) {
-                    pickedObject.id.box.outlineColor = Cesium.Color.WHITE;
                     pickedEntity = pickedObject.id as Cesium.Entity;
                     callback(pickedEntity);
                 }
@@ -109,11 +107,11 @@ const setTrainClickHandler = (set: boolean, callback: (entity: Cesium.Entity | n
             entityClickHandler.setInputAction(function (movement) {
                 const trainDataSource = findDataSourceByName(DATASOURCE_NAME.TRAIN);
                 const pickedObject = viewer.scene.pick(movement.position);
-                if(Cesium.defined(pickedObject) && pickedObject.id && !(trainDataSource.entities.values.indexOf(pickedObject.id) < 0)) {
+                if(Cesium.defined(pickedObject) && pickedObject.id) {
                     const pickedEntity = pickedObject.id;
                     viewer.clock.shouldAnimate = true;
                     viewer.trackedEntity = pickedEntity;
-
+                    console.log("clicked")
                     callback(pickedObject.id);
                 }else {
                     viewer.trackedEntity = undefined;
@@ -166,12 +164,13 @@ export default {
             showRenderLoopErrors: false,
         });
 
-        viewer.scene.primitives.add(
-            new Cesium.Cesium3DTileset({
-                // @ts-ignore
-                url: Cesium.IonResource.fromAssetId(96188),
-            })
-        );
+        // TODO: terrain 과 건물이 떨어져있음. 건물의 z값 조절 필요..
+        // viewer.scene.primitives.add(
+        //     new Cesium.Cesium3DTileset({
+        //         // @ts-ignore
+        //         url: Cesium.IonResource.fromAssetId(96188),
+        //     })
+        // );
 
         viewer.bottomContainer.style.visibility = 'hidden';
 

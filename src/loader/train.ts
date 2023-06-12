@@ -208,8 +208,6 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         console.log(`${train.trainNo}: no railway info`); return;
     }
 
-    // console.log(`${train.trainNo}: ${train.timetables[0].departTime} ~ ${train.timetables[train.timetables.length-1].arriveTime}`)
-
     dataSource.entities.add({
         id: train.trainNo,
         position: entityPosition,
@@ -217,13 +215,10 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         description: {
             'station': stationInfoList,
         },
-        box: {
-        dimensions: new Cesium.CallbackProperty(map.getSizeByZoom, false),
-            fill: true,
-            material: Cesium.Color.fromCssColorString(trainColor[line]).withAlpha(0.5),
-            outline: true,
-            outlineColor: Cesium.Color.BLACK,
-            heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+        model: {
+            uri: `./data/${line}.glb`,
+            scale: new Cesium.CallbackProperty(map.getSizeByZoom, false),
+            heightReference: Cesium.HeightReference.CLAMP_TO_GROUND
         },
     });
 }
