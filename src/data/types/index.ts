@@ -14,23 +14,20 @@ export type RailwayInfo = {
     line: string,
     railways: Railway[],
 }
-
 /**
  * Timetable
  */
 export type Timetable = {
-    uid: number,
-    arriveTime: string,
-    departTime: string,
-    stationNm: string,
-    stationCd: string,
-    nodeId: string,
-    originStation: number,
-    weekTag: number
+    arrive: string,
+    depart: string,
+    name: string,
+    node: string
 }
 
 export type Train = {
     trainNo: string,
+    inout: number,
+    week: number
     timetables: Timetable[]
 }
 

@@ -57,7 +57,7 @@ const getVelocity = (accDistance: number, noAccDistance: number, elapsedSec: num
 }
 
 export default (railwaysInfo: RailwayInfo[], timetablesInfo: TimetablesInfo[]) => {
-    const lines = ["line1", "line2", "line3", "line4", "line5", "line6", "line7"]
+    const lines = ["line1", "line2", "line3", "line4", "line5", "line6", "line7", "line8"]
 
     const dataSet: DataSet[] = [];
 
@@ -109,24 +109,24 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         if(!endNode) return;
 
         // 노드아이디가 여러개 이기 때문에 코드가 안맞을 수 있음. (ex 구로, 병점)
-        const railway = railways?.find(railway => railway.startNodeId===startNode.nodeId && railway.endNodeId===endNode.nodeId);
+        const railway = railways?.find(railway => railway.startNodeId===startNode.node && railway.endNodeId===endNode.node);
 
         const railwayCoords = railway?.coordinates;
 
-        const startDatetime = getTodayWithTime(startNode.departTime);
-        const endDatetime = getTodayWithTime(endNode.arriveTime)
+        const startDatetime = getTodayWithTime(startNode.depart);
+        const endDatetime = getTodayWithTime(endNode.arrive);
         plus9hours(startDatetime);
         plus9hours(endDatetime);
 
-        if(startNode.arriveTime !== '00:00:00' || startNode.departTime !== '00:00:00') {
-            const arrive = getTodayWithTime(startNode.arriveTime);
-            const depart = getTodayWithTime(startNode.departTime)
+        if(startNode.arrive !== '00:00:00' || startNode.depart !== '00:00:00') {
+            const arrive = getTodayWithTime(startNode.arrive);
+            const depart = getTodayWithTime(startNode.depart)
             plus9hours(arrive);
             plus9hours(depart);
-            entityStation.addSample( new Period(arrive, depart), `현재역: ${startNode.stationNm}`);
+            entityStation.addSample( new Period(arrive, depart), `현재역: ${startNode.name}`);
         }
 
-        entityStation.addSample( new Period(startDatetime, endDatetime), `전역: ${startNode.stationNm}, 다음역: ${endNode.stationNm}`);
+        entityStation.addSample( new Period(startDatetime, endDatetime), `전역: ${startNode.name}, 다음역: ${endNode.name}`);
 
         const startJulianDate = getJulianDate(startDatetime);
         const endJulianDate = getJulianDate(endDatetime);
@@ -221,7 +221,7 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         }
 
         if(array[index+2]) {
-            const endNodeDepartDatetime = getTodayWithTime(array[index+1].departTime);
+            const endNodeDepartDatetime = getTodayWithTime(array[index+1].depart);
             plus9hours(endNodeDepartDatetime);
 
             entityBearing.addSample(
@@ -250,5 +250,4 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
             heightReference: Cesium.HeightReference.CLAMP_TO_GROUND
         },
     });
-    debugger
 }
