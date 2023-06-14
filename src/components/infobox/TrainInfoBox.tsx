@@ -1,35 +1,34 @@
-import React, {useMemo} from "react";
+import React, { useMemo, useEffect, useState } from "react";
 
 import * as Cesium from 'cesium'
 
 import Card from '@mui/joy/Card';
-import CardOverflow from '@mui/joy/CardOverflow';
-import Divider from '@mui/joy/Divider';
 import Typography from '@mui/joy/Typography';
 
 import useTrainStore from "../../store/useTrainStore";
-import { StationInfo } from '../../utils/StationInfo'
 
 import map from '../../map'
 
 const TrainInfoBox = () => {
 
     const { entity } = useTrainStore();
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCount(prevCount => prevCount + 1);
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     const stationInfo = useMemo(() => {
-        let info: StationInfo | null = null;
         if(entity) {
-            const now = Cesium.JulianDate.toDate(map.getCurrentTime());
+            const now = Cesium.JulianDate.toDate(map.getCurrentTime()); //TODO
             // @ts-ignore
-            const infoList = entity?.description.getValue().station as StationInfo[];
-            infoList.map( i => {
-                if(i.period.contains(now)) {
-                    info = i;
-                }
-            })
+            return entity?.description.getValue().station.getValue(now);
         }
-        return info;
-    }, [entity]);
+    }, [count]);
 
     return <>
         {entity && stationInfo ?
@@ -44,25 +43,10 @@ const TrainInfoBox = () => {
                     {
                         entity ?
                             // @ts-ignore
-                            stationInfo?.info
+                            stationInfo
                             : '정보'
                     }
                 </Typography>
-                <Divider />
-                <CardOverflow
-                    variant="soft"
-                    sx={{
-                        display: 'flex',
-                        gap: 1.5,
-                        py: 1.5,
-                        px: 'var(--Card-padding)',
-                        bgcolor: 'background.level1',
-                    }}
-                >
-                    <Typography level="body3" sx={{ fontWeight: 'md', color: 'text.secondary' }}>
-                        원하는 정보 추가
-                    </Typography>
-                </CardOverflow>
             </Card>
         : <></>}
     </>

@@ -22,10 +22,19 @@ const Map = () => {
         }
         map.initMap(mapId);
         map.setTrainHoverHandler(true, (entity: Cesium.Entity| null) => {
-            entity == null ? removeEntity() : setEntity(entity);
+            // entity == null ? removeEntity() : setEntity(entity);
         })
         map.setTrainClickHandler(true, (entity: Cesium.Entity| null) => {
-            console.log(entity);
+            entity == null ? removeEntity() : setEntity(entity);
+            if(entity) {
+                map.setTrainHoverHandler(false, ()=>{});
+            }else{
+                map.setTrainHoverHandler(true, (entity: Cesium.Entity| null) => {
+                    entity == null ? removeEntity() : setEntity(entity);
+                })
+                removeEntity();
+            }
+
         })
         // map.store
         loader(map.getViewer());

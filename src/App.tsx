@@ -4,16 +4,14 @@ import React, { useEffect } from 'react';
 import CssBaseline from '@mui/joy/CssBaseline';
 import { CssVarsProvider } from '@mui/joy/styles';
 
-
 import ToolBar from './components/toolbar/ToolBar';
 
 // custom
 import theme from './styled/theme';
 
-import map from './map';
 import Map from './components/map';
-import loader from './loader';
 import InfoBox from "./components/infobox";
+import CameraToolBox from "./components/cameraToolBox";
 
 const mapId = 'cesiumContainer';
 const App = () => {
@@ -28,6 +26,7 @@ const App = () => {
             <Map />
             <ToolBar />
             <InfoBox />
+            <CameraToolBox />
 
         </CssVarsProvider>
     );

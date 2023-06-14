@@ -25,6 +25,7 @@ export class Period {
 
     contains(dateTime) {
         const date = new Date(dateTime);
-        return date >= this.startDateTime && date <= this.endDateTime;
+        return (date >= this.startDateTime && date <= this.endDateTime)
+            || date == this.endDateTime;
     }
 }

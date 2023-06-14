@@ -73,9 +73,28 @@ const InfoBox = (props: BoxProps) => (
     />
 )
 
+const CameraToolBox = (props: BoxProps) => (
+    <Box
+        component="div"
+        className="CameraToolBox"
+        {...props}
+        sx={[
+            {
+                position: 'absolute',
+                m: 1,
+                p: 1,
+                bottom: 0,
+                right: 0,
+            },
+            ...(Array.isArray(props?.sx) ? props?.sx : [props?.sx]),
+        ]}
+    />
+)
+
 export default {
     Root,
     ToolBar,
     ToolGroup,
-    InfoBox
+    InfoBox,
+    CameraToolBox
 };

@@ -8,9 +8,8 @@ import {Railway, RailwayInfo, Train, TimetablesInfo} from "../data/types";
 import map from '../map'
 import { plus9hours, getJulianDate, getTodayWithTime, Period } from '../utils/datetime'
 
-import trainColor from "../data/trainColor";
-
-import { StationInfo } from '../utils/StationInfo'
+import { SampledStationProperty } from '../utils/SampledStationProperty'
+import {SampledBearingProperty} from "../utils/SampledBearingProperty";
 
 const accDistance: number = 0.4;
 const sampleUnitSec = 1;
@@ -97,7 +96,8 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
 
     //1. entity 만들기
     const entityPosition =  new Cesium.SampledPositionProperty();
-    const stationInfoList: StationInfo[] = [];
+    const entityStation = new SampledStationProperty();
+    const entityBearing = new SampledBearingProperty();
 
     const dataSource = map.findDataSourceByName(map.DATASOURCE_NAME.TRAIN); //TODO 얘를 좀 딴데로 옮길 수 있을것같은데... 매개변수로 전달하긴 더 싫고..ㅜㅜ
 
@@ -123,14 +123,10 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
             const depart = getTodayWithTime(startNode.departTime)
             plus9hours(arrive);
             plus9hours(depart);
-            stationInfoList.push(
-                new StationInfo(`현재역: ${startNode.stationNm}`, new Period(arrive, depart))
-            )
+            entityStation.addSample( new Period(arrive, depart), `현재역: ${startNode.stationNm}`);
         }
 
-        stationInfoList.push(
-            new StationInfo(`전역: ${startNode.stationNm}, 다음역: ${endNode.stationNm}`, new Period(startDatetime, endDatetime))
-        )
+        entityStation.addSample( new Period(startDatetime, endDatetime), `전역: ${startNode.stationNm}, 다음역: ${endNode.stationNm}`);
 
         const startJulianDate = getJulianDate(startDatetime);
         const endJulianDate = getJulianDate(endDatetime);
@@ -203,7 +199,25 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
             }
             j++;
         }
+
+        // 4. 시간에 따른 각도 계산
+        for(let k=0; k<timeSampleList.length; k++) {
+            //TODO 정차되어있는 시간동안의 각도가 포함되지 않았나보다...
+            const time = timeSampleList[k];
+            const location = locationList[k];
+            const nextTime = timeSampleList[k+1];
+            const nextLocation = locationList[k+1];
+
+            if(!nextTime || !nextLocation) break;
+
+            const bearing = Turf.bearing(Turf.point(location), Turf.point(nextLocation));
+
+            entityBearing.addSample(
+                new Period(Cesium.JulianDate.toDate(time), Cesium.JulianDate.toDate(nextTime)),
+                bearing);
+        }
     });
+
     if (noRailway) {
         console.log(`${train.trainNo}: no railway info`); return;
     }
@@ -213,7 +227,8 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         position: entityPosition,
         orientation: new Cesium.VelocityOrientationProperty(entityPosition), // Automatically set the vehicle's orientation to the direction it's facing.
         description: {
-            'station': stationInfoList,
+            'station': entityStation,
+            'bearing': entityBearing,
         },
         model: {
             uri: `./data/${line}.glb`,
