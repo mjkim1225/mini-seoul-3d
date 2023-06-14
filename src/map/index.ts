@@ -74,27 +74,6 @@ const findDataSourceByName = (name) => {
     return dataSource;
 }
 
-const getCartesianFromBearingAndDistance = (bearing: number, distance:number) => {
-    //distance unit: meter
-    const heading = Cesium.Math.toRadians(bearing);  // 북쪽에서 10도
-    const pitch = Cesium.Math.toRadians(-75);  // 수평 방향
-    const roll = 0;  // 회전 없음
-
-    const quaternion = Cesium.Transforms.headingPitchRollQuaternion(
-        new Cesium.Cartesian3(0, 0, 0),
-        new Cesium.HeadingPitchRoll(heading, pitch, roll)
-    );
-
-    const direction = new Cesium.Cartesian3(0, 0, 3);  // 북쪽 방향
-
-    const position = Cesium.Matrix3.multiplyByVector(
-        Cesium.Matrix3.fromQuaternion(quaternion),
-        direction,
-        new Cesium.Cartesian3()
-    );
-    return Cesium.Cartesian3.multiplyByScalar(position, distance, position);
-}
-
 const getEntityBearing = (entity) => {
     const now = Cesium.JulianDate.toDate(viewer.clock.currentTime);
     if(!entity.description) return;
