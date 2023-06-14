@@ -201,6 +201,7 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
         }
 
         // 4. 시간에 따른 각도 계산
+        let lastBearing = 0;
         for(let k=0; k<timeSampleList.length; k++) {
             //TODO 정차되어있는 시간동안의 각도가 포함되지 않았나보다...
             const time = timeSampleList[k];
@@ -211,11 +212,24 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
             if(!nextTime || !nextLocation) break;
 
             const bearing = Turf.bearing(Turf.point(location), Turf.point(nextLocation));
-
             entityBearing.addSample(
                 new Period(Cesium.JulianDate.toDate(time), Cesium.JulianDate.toDate(nextTime)),
-                bearing);
+                bearing
+            );
+            lastBearing = bearing;
+
         }
+
+        if(array[index+2]) {
+            const endNodeDepartDatetime = getTodayWithTime(array[index+1].departTime);
+            plus9hours(endNodeDepartDatetime);
+
+            entityBearing.addSample(
+                new Period(endDatetime, endNodeDepartDatetime),
+                lastBearing
+            );
+        }
+
     });
 
     if (noRailway) {
@@ -236,4 +250,5 @@ const makeTrainEntity = (viewer: Viewer, line: string, train: Train, railways: R
             heightReference: Cesium.HeightReference.CLAMP_TO_GROUND
         },
     });
+    debugger
 }

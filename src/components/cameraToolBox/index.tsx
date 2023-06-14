@@ -1,13 +1,11 @@
-import React, { useMemo, useEffect, useState } from "react";
-import useTrainStore from "../../store/useTrainStore";
+import React, { useEffect, useState } from "react";
 import map from "../../map";
 import Layout from "../Layout";
-import * as Cesium from 'cesium'
+import useCameraStore from "../../store/useCameraStore";
 
 const Index = () => {
 
-    const { entity } = useTrainStore();
-    const [camera, setCamera] = useState(true);
+    const { cameraEntity, flag, setFlag, bearing, setBearing } = useCameraStore();
     const [count, setCount] = useState(0);
 
     useEffect(() => {
@@ -18,24 +16,24 @@ const Index = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const bearing = useMemo(() => {
-        if(entity) {
-            const now = Cesium.JulianDate.toDate(map.getCurrentTime()); //TODO 세슘객체를 여기서 부르는건 아닌것같아
-            // @ts-ignore
-            return entity?.description.getValue().bearing.getValue(now);
-        }
-    }, [count]);
-
     useEffect(() => {
-        if(camera && entity) {
-            map.movemove(entity)
+        if(flag && cameraEntity && bearing !== null) {
+            map.moveCamera(cameraEntity, bearing, (bearing) => {
+                setBearing(bearing);
+            })
         };
-    }, [count,entity]); //TODO 진짜 이방법밖엔 없을까....
+    }, [count, flag, cameraEntity]); //TODO 진짜 이방법밖엔 없을까....
 
+    const handleCamera = () => {
+        setFlag(!flag);
+    }
 
     return (
         <Layout.CameraToolBox>
             <div>야호</div>
+            <button onClick={handleCamera}>{
+                flag? "카메라 멈춤" : "카메라 시작"
+            }</button>
         </Layout.CameraToolBox>
     )
 }
