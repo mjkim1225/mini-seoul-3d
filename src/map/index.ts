@@ -137,7 +137,7 @@ const animateCamera = (entity, fromBearing, toBearing) => {
     const bearingDiff = toBearing - fromBearing;
     const bearingStep = bearingDiff / steps;
 
-    const stepDuration = 0.02; // 각 단계의 지속 시간 (초)
+    const stepDuration = 0.002; // 각 단계의 지속 시간 (초)
 
     function animate() {
         if (currentStep < steps) {
@@ -227,9 +227,9 @@ export default {
                 }
             ),
             shouldAnimate: true,
-            // animation: true,
+            animation: false,
             fullscreenButton: false,
-            // timeline: false,
+            timeline: false,
             geocoder: false, // toolbar
             homeButton: false, // toolbar
             baseLayerPicker: false, // toolbar
@@ -238,23 +238,22 @@ export default {
             selectionIndicator: false,
             navigationHelpButton: false, // toolbar,
             // terrain
-            terrainProvider: new Cesium.CesiumTerrainProvider({
-                url: "https://175.197.92.213:10210/terrain-tile/dem05_ellipsoid"
-            }),
+            // terrainProvider: new Cesium.CesiumTerrainProvider({
+            //     url: "https://175.197.92.213:10210/terrain-tile/dem05_ellipsoid"
+            // }),
             // 영상
             showRenderLoopErrors: false,
         });
 
-        // TODO: terrain 과 건물이 떨어져있음. 건물의 z값 조절 필요..
-        viewer.scene.primitives.add(
-            new Cesium.Cesium3DTileset({
-                // @ts-ignore
-                url: `https://175.197.92.213:10210/ngii-buildings/3DTiles_20230613/su/tileset.json`,
-                customShader: new Cesium.CustomShader({
-                    lightingModel: Cesium.LightingModel.UNLIT,
-                }),
-            })
-        );
+        // viewer.scene.primitives.add(
+        //     new Cesium.Cesium3DTileset({
+        //         // @ts-ignore
+        //         url: `https://175.197.92.213:10210/ngii-buildings/3DTiles_20230613/su/tileset.json`,
+        //         customShader: new Cesium.CustomShader({
+        //             lightingModel: Cesium.LightingModel.UNLIT,
+        //         }),
+        //     })
+        // );
 
         viewer.bottomContainer.style.visibility = 'hidden';
 
