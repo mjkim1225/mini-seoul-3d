@@ -94,7 +94,7 @@ const trackEntity = (entity, bearing) => {
     }
 
     //cartesian 계산
-    const distance = 100;
+    const distance = 200;
     const heading = Cesium.Math.toRadians(bearing);
     const pitch = Cesium.Math.toRadians(-75);  // 수평 방향
     const roll = 0;  // 회전 없음
@@ -118,11 +118,14 @@ const trackEntity = (entity, bearing) => {
 }
 
 const moveCamera = (entity, fromBearing, callback) => {
+
+    const bearing = getEntityBearing(entity);
+    if(!bearing) return;
+    if(fromBearing == bearing) return;
+
     if(viewer.trackedEntity) {
         viewer.trackedEntity = undefined;
     }
-    const bearing = getEntityBearing(entity);
-    if(!bearing) return;
     callback(bearing);
     animateCamera(entity, fromBearing, bearing);
 }
@@ -236,20 +239,22 @@ export default {
             navigationHelpButton: false, // toolbar,
             // terrain
             terrainProvider: new Cesium.CesiumTerrainProvider({
-                url: `${config.MAP_TILER.url}/tiles/terrain-quantized-mesh-v2/?key=${config.MAP_TILER.key}`,
-                requestVertexNormals: true
+                url: "https://175.197.92.213:10210/terrain-tile/dem05_ellipsoid"
             }),
             // 영상
             showRenderLoopErrors: false,
         });
 
         // TODO: terrain 과 건물이 떨어져있음. 건물의 z값 조절 필요..
-        // viewer.scene.primitives.add(
-        //     new Cesium.Cesium3DTileset({
-        //         // @ts-ignore
-        //         url: Cesium.IonResource.fromAssetId(96188),
-        //     })
-        // );
+        viewer.scene.primitives.add(
+            new Cesium.Cesium3DTileset({
+                // @ts-ignore
+                url: `https://175.197.92.213:10210/ngii-buildings/3DTiles_20230613/su/tileset.json`,
+                customShader: new Cesium.CustomShader({
+                    lightingModel: Cesium.LightingModel.UNLIT,
+                }),
+            })
+        );
 
         viewer.bottomContainer.style.visibility = 'hidden';
 
