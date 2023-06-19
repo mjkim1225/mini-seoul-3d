@@ -21,7 +21,7 @@ const DATASOURCE_NAME = {
 }
 
 const setCameraView = (params: CameraOption) => {
-    viewer.camera.setView({
+    viewer.camera.flyTo({
         destination: Cesium.Cartesian3.fromDegrees(
             params.longitude,
             params.latitude,
@@ -195,6 +195,7 @@ const setTrainClickHandler = (set: boolean, cameraMode: string, callback: (entit
                     callback(pickedEntity, bearing);
                 }else {
                     viewer.trackedEntity = undefined;
+                    setCameraView(config.DEFAULT_CAMERA_OPTION);
                     callback(null, null);
                 }
             }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
