@@ -44,7 +44,15 @@ const CameraToolBox = () => {
     useEffect(() => {
         if(cameraEntity && bearing !== null) {
             if(cameraMode !== mode) {
-                setBearing(180);
+                if( ((cameraMode == TRACK_BACK || cameraMode == TRACK_BACK_UPWARD) && (mode == TRACK_FRONT || mode == TRACK_FRONT_UPWARD))
+                || ((cameraMode == TRACK_FRONT || cameraMode == TRACK_FRONT_UPWARD) && (mode == TRACK_BACK || mode == TRACK_BACK_UPWARD)) ) {
+                    setBearing(bearing > 180 ? bearing - 180 : bearing + 180);
+                }else if( cameraMode !== TRACK && mode == TRACK ) {
+                    setBearing(180);
+                }else if ( (cameraMode == TRACK_BACK && mode == TRACK_BACK_UPWARD) || (cameraMode == TRACK_FRONT && mode == TRACK_FRONT_UPWARD)
+                    || (cameraMode == TRACK_BACK_UPWARD && mode == TRACK_BACK) || (cameraMode == TRACK_FRONT_UPWARD && mode == TRACK_FRONT) ) {
+                    setBearing(bearing + 0.0001); //눈속임..
+                }
             }
             map.moveCamera(cameraEntity, bearing, mode, (bearing) => {
                 setBearing(bearing);
