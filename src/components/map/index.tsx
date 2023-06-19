@@ -31,10 +31,14 @@ const Map = () => {
                 setEntity(entity);
                 setCameraEntity(entity);
                 setBearing(bearing);
+                map.setTrainHoverHandler(false, () => {});
             }else {
                 removeEntity();
                 removeCameraEntity();
                 removeBearing();
+                map.setTrainHoverHandler(true, (entity: Cesium.Entity| null) => {
+                    entity == null ? removeEntity() : setEntity(entity);
+                })
             }
         })
         // map.store
