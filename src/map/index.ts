@@ -91,15 +91,11 @@ const trackEntity = (entity, bearing, cameraMode) => {
         viewer.trackedEntity = undefined;
     }
 
-    if(cameraMode === config.CAMERA_MODE.TRACK_BACK || cameraMode === config.CAMERA_MODE.TRACK_BACK_UPWARD) {
-        bearing = bearing >= 180 ? bearing - 180 : bearing + 180;
-    }
+    bearing = config.MODE_VALUE[cameraMode].bearing(bearing);
 
-   const distance = cameraMode == config.CAMERA_MODE.TRACK ? 500 :
-                            cameraMode.indexOf('Upward') < 0 ? 200 : 400 ;
+   const distance = config.MODE_VALUE[cameraMode].distance;
    const heading = Cesium.Math.toRadians(bearing);
-   const pitch = cameraMode == config.CAMERA_MODE.TRACK ? Cesium.Math.toRadians(-50) :
-                cameraMode.indexOf('Upward') < 0 ? Cesium.Math.toRadians(-85) : Cesium.Math.toRadians(-65);
+   const pitch = config.MODE_VALUE[cameraMode].pitch;
    const roll = 0;  // 회전 없음
 
    const quaternion = Cesium.Transforms.headingPitchRollQuaternion(

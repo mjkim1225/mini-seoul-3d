@@ -10,7 +10,7 @@ const mapId = 'cesiumContainer';
 const Map = () => {
 
     const { setEntity, removeEntity } = useTrainStore();
-    const { mode, setCameraEntity, setBearing, removeCameraEntity, removeBearing,   } = useCameraStore();
+    const { mode, setCameraEntity, setBearing, removeCameraEntity, removeBearing } = useCameraStore();
 
     useEffect(() => {
         const viewer = map.getViewer();

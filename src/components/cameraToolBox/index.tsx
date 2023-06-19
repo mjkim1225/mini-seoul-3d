@@ -26,12 +26,11 @@ const {
 
 const tick = 0.5
 
-const Index = () => {
+const CameraToolBox = () => {
 
-    const { cameraEntity, bearing, setBearing } = useCameraStore();
+    const { cameraEntity, bearing, setBearing, mode, setMode } = useCameraStore();
     const [count, setCount] = useState(0);
 
-    const { mode, setMode } = useCameraStore()
     const [ cameraMode, setCameraMode ] = useState(mode);
 
     useEffect(() => {
@@ -45,11 +44,7 @@ const Index = () => {
     useEffect(() => {
         if(cameraEntity && bearing !== null) {
             if(cameraMode !== mode) {
-                if(mode == TRACK) {
-                    setBearing(180);
-                }else {
-                    setBearing(bearing >= 180 ? bearing - 180 : bearing + 180)
-                }
+                setBearing(180);
             }
             map.moveCamera(cameraEntity, bearing, mode, (bearing) => {
                 setBearing(bearing);
@@ -115,4 +110,4 @@ const Index = () => {
     )
 }
 
-export default Index;
+export default CameraToolBox;
