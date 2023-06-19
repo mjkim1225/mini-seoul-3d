@@ -27,16 +27,11 @@ const Map = () => {
             entity == null ? removeEntity() : setEntity(entity);
         })
         map.setTrainClickHandler(true, mode, (entity: Cesium.Entity | null, bearing: number | null) => {
-            if(entity) {
+            if(entity && bearing)  {
                 setEntity(entity);
                 setCameraEntity(entity);
-            }
-            if(bearing) {
                 setBearing(bearing);
             }else {
-                setBearing(0);
-            }
-            if(!entity && !bearing) {
                 removeEntity();
                 removeCameraEntity();
                 removeBearing();

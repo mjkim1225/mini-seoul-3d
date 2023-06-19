@@ -88,14 +88,17 @@ const CameraToolBox = () => {
                     </Typography>
                 {(
                     [
-                        { icon: <GpsFixedIcon />, text: '위치만', func: () => changeCameraMode(TRACK)},
-                        { icon: <CircleIcon />, text: '후방', func: () => changeCameraMode(TRACK_BACK)},
-                        { icon: <KeyboardDoubleArrowUpIcon />, text: '후방 상공', func: ()=>changeCameraMode(TRACK_BACK_UPWARD)},
-                        { icon: <DirectionsRailwayFilledIcon />, text: '전방', func: ()=>changeCameraMode(TRACK_FRONT)},
-                        { icon: <KeyboardDoubleArrowDownIcon />, text: '전방 상공', func: ()=>changeCameraMode(TRACK_FRONT_UPWARD)},
+                        { icon: <GpsFixedIcon />, text: '위치만', mode: TRACK, func: () => changeCameraMode(TRACK)},
+                        { icon: <CircleIcon />, text: '후방', mode: TRACK_BACK, func: () => changeCameraMode(TRACK_BACK)},
+                        { icon: <KeyboardDoubleArrowUpIcon />, text: '후방 상공', mode: TRACK_BACK_UPWARD, func: ()=>changeCameraMode(TRACK_BACK_UPWARD)},
+                        { icon: <DirectionsRailwayFilledIcon />, text: '전방', mode: TRACK_FRONT, func: ()=>changeCameraMode(TRACK_FRONT)},
+                        { icon: <KeyboardDoubleArrowDownIcon />, text: '전방 상공', mode: TRACK_FRONT_UPWARD, func: ()=>changeCameraMode(TRACK_FRONT_UPWARD)},
                     ]
                 ).map((item) => (
-                    <ListItem key={item.text} onClick={item.func}>
+                    <ListItem key={item.text}
+                              onClick={item.func}
+                              sx={{ bgcolor: (item.mode == mode) ? '#90909045' : '' }}
+                    >
                         <ListItemButton>
                             <ListItemDecorator>
                                 { item.icon }
