@@ -66,7 +66,9 @@ const ToolBar = () => {
             </Layout.ToolBar>
 
 
-            { camera? <CameraToolBox /> : null }
+            <div style={{display: camera ? 'block' : 'none' }}>
+                <CameraToolBox />
+            </div>
         </div>
     );
 };

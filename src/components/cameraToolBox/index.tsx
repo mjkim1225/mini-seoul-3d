@@ -58,7 +58,7 @@ const Index = () => {
         }
     }, [count, mode, cameraEntity]); //TODO 진짜 이방법밖엔 없을까....
 
-    const test = (mode) => {
+    const changeCameraMode = (mode) => {
         setMode(mode)
     }
 
@@ -93,11 +93,11 @@ const Index = () => {
                     </Typography>
                 {(
                     [
-                        { icon: <GpsFixedIcon />, text: '위치만', func: () => test(TRACK)},
-                        { icon: <CircleIcon />, text: '후방', func: () => test(TRACK_BACK)},
-                        { icon: <KeyboardDoubleArrowUpIcon />, text: '후방 상공', func: ()=>test(TRACK_BACK_UPWARD)},
-                        { icon: <DirectionsRailwayFilledIcon />, text: '전방', func: ()=>test(TRACK_FRONT)},
-                        { icon: <KeyboardDoubleArrowDownIcon />, text: '전방 상공', func: ()=>test(TRACK_FRONT_UPWARD)},
+                        { icon: <GpsFixedIcon />, text: '위치만', func: () => changeCameraMode(TRACK)},
+                        { icon: <CircleIcon />, text: '후방', func: () => changeCameraMode(TRACK_BACK)},
+                        { icon: <KeyboardDoubleArrowUpIcon />, text: '후방 상공', func: ()=>changeCameraMode(TRACK_BACK_UPWARD)},
+                        { icon: <DirectionsRailwayFilledIcon />, text: '전방', func: ()=>changeCameraMode(TRACK_FRONT)},
+                        { icon: <KeyboardDoubleArrowDownIcon />, text: '전방 상공', func: ()=>changeCameraMode(TRACK_FRONT_UPWARD)},
                     ]
                 ).map((item) => (
                     <ListItem key={item.text} onClick={item.func}>
