@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import map from '../../map'
 // Icons import
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
@@ -15,6 +15,7 @@ import RemoveRedEyeRoundedIcon from '@mui/icons-material/RemoveRedEyeRounded';
 import ToolButton from './ToolButton';
 
 import Layout from '../Layout';
+import CameraToolBox from "../cameraToolBox";
 
 const searchRoundedIcon = () => <SearchRoundedIcon />;
 const addRoundedIcon = () => <AddRoundedIcon />;
@@ -33,34 +34,40 @@ const zoom = (flag: boolean) => {
 
 const ToolBar = () => {
 
+    const [ camera, setCamera ] = useState(false);
+
     return (
-        <Layout.ToolBar>
-            <Layout.ToolGroup>
-                <ToolButton icon={searchRoundedIcon} />
-            </Layout.ToolGroup>
+        <div>
+            <Layout.ToolBar>
+                <Layout.ToolGroup>
+                    <ToolButton icon={searchRoundedIcon} />
+                </Layout.ToolGroup>
 
-            <Layout.ToolGroup>
-                <ToolButton icon={addRoundedIcon} onClick={() => zoom(true)} />
-                <ToolButton icon={removeRoundedIcon} onClick={() => zoom(false)}/>
-            </Layout.ToolGroup>
+                <Layout.ToolGroup>
+                    <ToolButton icon={addRoundedIcon} onClick={() => zoom(true)} />
+                    <ToolButton icon={removeRoundedIcon} onClick={() => zoom(false)}/>
+                </Layout.ToolGroup>
 
-            <Layout.ToolGroup>
-                <ToolButton icon={zoomOutMapRoundedIcon} />
-            </Layout.ToolGroup>
+                <Layout.ToolGroup>
+                    <ToolButton icon={zoomOutMapRoundedIcon} />
+                </Layout.ToolGroup>
 
-            <Layout.ToolGroup>
-                <ToolButton icon={removeRedEyeRoundedIcon} />
-                <ToolButton icon={playCircleFilledRoundedIcon} />
-                <ToolButton icon={batterySaverRoundedIcon} />
-            </Layout.ToolGroup>
+                <Layout.ToolGroup>
+                    <ToolButton icon={removeRedEyeRoundedIcon} />
+                    <ToolButton icon={playCircleFilledRoundedIcon} />
+                    <ToolButton icon={batterySaverRoundedIcon} />
+                </Layout.ToolGroup>
 
-            <Layout.ToolGroup>
-                <ToolButton icon={layersRoundedIcon} />
-                <ToolButton icon={videocamRoundedIcon} />
-                <ToolButton icon={infoRoundedIcon} />
-            </Layout.ToolGroup>
+                <Layout.ToolGroup>
+                    <ToolButton icon={layersRoundedIcon} />
+                    <ToolButton icon={videocamRoundedIcon} onClick={() => {setCamera(!camera)}} />
+                    <ToolButton icon={infoRoundedIcon} />
+                </Layout.ToolGroup>
+            </Layout.ToolBar>
 
-        </Layout.ToolBar>
+
+            { camera? <CameraToolBox /> : null }
+        </div>
     );
 };
 

@@ -10,7 +10,7 @@ const mapId = 'cesiumContainer';
 const Map = () => {
 
     const { setEntity, removeEntity } = useTrainStore();
-    const { setBearing, removeBearing, cameraEntity, setCameraEntity, removeCameraEntity } = useCameraStore();
+    const { mode, setCameraEntity, setBearing, removeCameraEntity, removeBearing,   } = useCameraStore();
 
     useEffect(() => {
         const viewer = map.getViewer();
@@ -26,15 +26,21 @@ const Map = () => {
         map.setTrainHoverHandler(true, (entity: Cesium.Entity| null) => {
             entity == null ? removeEntity() : setEntity(entity);
         })
-        map.setTrainClickHandler(true, (entity: Cesium.Entity| null, bearing: number | null) => {
-            if(entity && bearing) {
+        map.setTrainClickHandler(true, mode, (entity: Cesium.Entity | null, bearing: number | null) => {
+            if(entity) {
+                setEntity(entity);
                 setCameraEntity(entity);
+            }
+            if(bearing) {
                 setBearing(bearing);
             }else {
+                setBearing(0);
+            }
+            if(!entity && !bearing) {
+                removeEntity();
                 removeCameraEntity();
                 removeBearing();
             }
-
         })
         // map.store
         loader(map.getViewer());

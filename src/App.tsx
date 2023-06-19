@@ -11,7 +11,6 @@ import theme from './styled/theme';
 
 import Map from './components/map';
 import InfoBox from "./components/infobox";
-import CameraToolBox from "./components/cameraToolBox";
 
 const mapId = 'cesiumContainer';
 const App = () => {
@@ -26,7 +25,6 @@ const App = () => {
             <Map />
             <ToolBar />
             <InfoBox />
-            <CameraToolBox />
 
         </CssVarsProvider>
     );

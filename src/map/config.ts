@@ -17,8 +17,17 @@ const MAP_TILER = {
     key: 'XSHSlYSeKVmyAEfR1ema',
 }
 
+const CAMERA_MODE = {
+    TRACK: 'track',
+    TRACK_BACK: 'trackBack',
+    TRACK_BACK_UPWARD: 'trackBackUpward',
+    TRACK_FRONT: 'trackFront',
+    TRACK_FRONT_UPWARD: 'trackFrontUpward',
+}
+
 export default {
     ACCESS_TOKEN,
     DEFAULT_CAMERA_OPTION,
-    MAP_TILER
+    MAP_TILER,
+    CAMERA_MODE
 };

@@ -80,68 +80,59 @@ const getEntityBearing = (entity) => {
 
     let bearing = entity.description.getValue().bearing.getValue(now);
 
-    if(!bearing) return;
+    if(!bearing) return null;
     bearing = bearing < 0 ? bearing + 360 : bearing;
-    bearing = bearing >= 180 ? bearing - 180 : bearing + 180;
+
     return bearing;
 }
 
-const trackEntity = (entity, bearing) => {
-    if(!bearing) return;
-
+const trackEntity = (entity, bearing, cameraMode) => {
     if(viewer.trackedEntity) {
         viewer.trackedEntity = undefined;
     }
 
-    //cartesian 계산
-    const distance = 200;
-    const heading = Cesium.Math.toRadians(bearing);
-    const pitch = Cesium.Math.toRadians(-75);  // 수평 방향
-    const roll = 0;  // 회전 없음
+    if(cameraMode === config.CAMERA_MODE.TRACK_BACK || cameraMode === config.CAMERA_MODE.TRACK_BACK_UPWARD) {
+        bearing = bearing >= 180 ? bearing - 180 : bearing + 180;
+    }
 
-    const quaternion = Cesium.Transforms.headingPitchRollQuaternion(
-        new Cesium.Cartesian3(0, 0, 0),
-        new Cesium.HeadingPitchRoll(heading, pitch, roll)
-    );
+   const distance = cameraMode == config.CAMERA_MODE.TRACK ? 500 :
+                            cameraMode.indexOf('Upward') < 0 ? 200 : 400 ;
+   const heading = Cesium.Math.toRadians(bearing);
+   const pitch = cameraMode == config.CAMERA_MODE.TRACK ? Cesium.Math.toRadians(-50) :
+                cameraMode.indexOf('Upward') < 0 ? Cesium.Math.toRadians(-85) : Cesium.Math.toRadians(-65);
+   const roll = 0;  // 회전 없음
 
-    const direction = new Cesium.Cartesian3(0, 0, 3);  // 북쪽 방향
+   const quaternion = Cesium.Transforms.headingPitchRollQuaternion(
+       new Cesium.Cartesian3(0, 0, 0),
+       new Cesium.HeadingPitchRoll(heading, pitch, roll)
+   );
 
-    const position = Cesium.Matrix3.multiplyByVector(
-        Cesium.Matrix3.fromQuaternion(quaternion),
-        direction,
-        new Cesium.Cartesian3()
-    );
+   const direction = new Cesium.Cartesian3(0, 0, 3);  // 북쪽 방향
 
-    entity.viewFrom =  Cesium.Cartesian3.multiplyByScalar(position, distance, position);
+   const position = Cesium.Matrix3.multiplyByVector(
+       Cesium.Matrix3.fromQuaternion(quaternion),
+       direction,
+       new Cesium.Cartesian3()
+   );
+
+   if(distance) entity.viewFrom =  Cesium.Cartesian3.multiplyByScalar(position, distance, position);
+
     viewer.trackedEntity = entity;
-
 }
 
-const moveCamera = (entity, fromBearing, callback) => {
 
-    const bearing = getEntityBearing(entity);
-    if(!bearing) return;
-    if(fromBearing == bearing) return;
-
-    if(viewer.trackedEntity) {
-        viewer.trackedEntity = undefined;
-    }
-    callback(bearing);
-    animateCamera(entity, fromBearing, bearing);
-}
-
-const animateCamera = (entity, fromBearing, toBearing) => {
+const animateCamera = (entity, fromBearing, toBearing, cameraMode) => {
     let currentStep = 0;
     const steps = 20;
 
     const bearingDiff = toBearing - fromBearing;
     const bearingStep = bearingDiff / steps;
 
-    const stepDuration = 0.002; // 각 단계의 지속 시간 (초)
+    const stepDuration = 0.02; // 각 단계의 지속 시간 (초)
 
     function animate() {
         if (currentStep < steps) {
-            trackEntity(entity, fromBearing + bearingStep * currentStep);
+            trackEntity(entity, fromBearing + bearingStep * currentStep, cameraMode);
             currentStep++;
             setTimeout(animate, stepDuration*1000);
         }
@@ -149,7 +140,21 @@ const animateCamera = (entity, fromBearing, toBearing) => {
     animate();
 }
 
+const moveCamera = (entity, fromBearing, cameraMode, callback) => {
+    if(cameraMode == config.CAMERA_MODE.TRACK) {
+        trackEntity(entity, fromBearing, cameraMode);
+    }else {
+        const bearing = getEntityBearing(entity);
+        if(!bearing) return;
+        if(fromBearing == bearing) return;
 
+        if(viewer.trackedEntity) {
+            viewer.trackedEntity = undefined;
+        }
+        callback(bearing);
+        animateCamera(entity, fromBearing, bearing, cameraMode);
+    }
+}
 
 
 let entityHoverHandler: ScreenSpaceEventHandler | void | null = null;
@@ -178,7 +183,7 @@ const setTrainHoverHandler = (set: boolean, callback: (entity: Cesium.Entity | n
     }
 }
 
-const setTrainClickHandler = (set: boolean, callback: (entity: Cesium.Entity | null, bearing: number | null) => void) => {
+const setTrainClickHandler = (set: boolean, cameraMode: string, callback: (entity: Cesium.Entity | null, bearing: number | null) => void) => {
     const map = this;
     if(set) {
         if(!entityClickHandler) {
@@ -189,8 +194,8 @@ const setTrainClickHandler = (set: boolean, callback: (entity: Cesium.Entity | n
                 if(Cesium.defined(pickedObject) && pickedObject.id) {
                     const pickedEntity = pickedObject.id;
                     viewer.clock.shouldAnimate = true;
-                    const bearing = getEntityBearing(pickedEntity);
-                    trackEntity(pickedEntity, bearing);
+                    const bearing = cameraMode == config.CAMERA_MODE.TRACK ? 180 : getEntityBearing(pickedEntity);
+                    trackEntity(pickedEntity, bearing, cameraMode);
                     callback(pickedEntity, bearing);
                 }else {
                     viewer.trackedEntity = undefined;
@@ -216,16 +221,18 @@ export default {
     moveCamera,
     setTrainHoverHandler,
     setTrainClickHandler,
-    initMap: (mapId: string) => {
+    initMap: async (mapId: string) => {
         Cesium.Ion.defaultAccessToken = config.ACCESS_TOKEN;
 
         viewer = new Cesium.Viewer(mapId, {
-                imageryProvider: new Cesium.UrlTemplateImageryProvider({
-                    url: `${config.MAP_TILER.url}/maps/dataviz/{z}/{x}/{y}.png?key=${config.MAP_TILER.key}`,
-                    minimumLevel: 0,
-                    maximumLevel: 20
-                }
-            ),
+            // imageryProvider: new Cesium.UrlTemplateImageryProvider({
+            //     url: `${config.MAP_TILER.url}/maps/dataviz/{z}/{x}/{y}.png?key=${config.MAP_TILER.key}`,
+            //     minimumLevel: 0,
+            //     maximumLevel: 20
+            // }),
+            imageryProvider: new Cesium.OpenStreetMapImageryProvider({
+                url : 'https://a.tile.openstreetmap.org/'
+            }),
             shouldAnimate: true,
             animation: false,
             fullscreenButton: false,
@@ -244,6 +251,17 @@ export default {
             // 영상
             showRenderLoopErrors: false,
         });
+
+        try {
+            const imageryLayer = viewer.imageryLayers.addImageryProvider(
+                new Cesium.OpenStreetMapImageryProvider({
+                    url : 'https://a.tile.openstreetmap.org/'
+                })
+            );
+            await viewer.zoomTo(imageryLayer);
+        } catch (error) {
+            console.log(error);
+        }
 
         // viewer.scene.primitives.add(
         //     new Cesium.Cesium3DTileset({
