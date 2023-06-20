@@ -1,6 +1,5 @@
 import * as Cesium from 'cesium';
 // @ts-ignore
-import {Cartesian3, Entity, Viewer, JulianDate} from '@types/cesium';
 import * as Turf from '@turf/turf';
 import {Units} from "@turf/helpers";
 import {Railway, RailwayInfo, Train, TimetablesInfo} from "../data/types";
@@ -9,7 +8,7 @@ import map from '../map'
 import { plus9hours, getJulianDate, getTodayWithTime, Period } from '../utils/datetime'
 
 import { SampledStationProperty } from '../utils/SampledStationProperty'
-import {SampledBearingProperty} from "../utils/SampledBearingProperty";
+import { SampledBearingProperty } from "../utils/SampledBearingProperty";
 
 const accDistance: number = 0.4;
 const sampleUnitSec = 1;
@@ -33,8 +32,8 @@ const getDuration = (distance: number, velocity: number) => {
     return distance / velocity; //h
 }
 
-const makeTimeSample = (numberOfSamples: number, startDatetime: JulianDate, totalSeconds: number) => {
-    let timeList: JulianDate[] = []
+const makeTimeSample = (numberOfSamples: number, startDatetime: Cesium.JulianDate, totalSeconds: number) => {
+    let timeList: Cesium.JulianDate[] = []
     for (let i = 0; i < numberOfSamples; i++) {
         const factor = i / numberOfSamples;
         const time = Cesium.JulianDate.addSeconds(
@@ -56,41 +55,8 @@ const getVelocity = (accDistance: number, noAccDistance: number, elapsedSec: num
     return velocity;
 }
 
-export default (railwaysInfo: RailwayInfo[], timetablesInfo: TimetablesInfo[]) => {
-    const lines = ["line1", "line2", "line3", "line4", "line5", "line6", "line7", "line8"]
 
-    const dataSet: DataSet[] = [];
-
-    lines.map(line => {
-        const data: DataSet = {};
-        data.line = line;
-        railwaysInfo.map(r => {
-            if (r.line === line) data.railways = r.railways;
-        })
-        timetablesInfo.map(t => {
-            if (t.line === line) data.trains = t.trains;
-        })
-        dataSet.push(data);
-    })
-    return dataSet;
-}
-
-export function trainsWorker(dataSet: DataSet[]) {
-
-    for(let data of dataSet) {
-        const line = data.line;
-        const trains = data.trains;
-        const railways = data.railways;
-
-        if(!trains) continue;
-
-        for(let train of trains) {
-            if(railways && line) makeTrainEntity(line, train, railways);
-        }
-    }
-}
-
-const makeTrainEntity = (line: string, train: Train, railways: Railway[]) => {
+const makeTrainEntity = (line: string, train: Train, railways: Railway[]) : Cesium.Entity | null => {
 
     const timetable = train.timetables;
 
@@ -98,8 +64,6 @@ const makeTrainEntity = (line: string, train: Train, railways: Railway[]) => {
     const entityPosition =  new Cesium.SampledPositionProperty();
     const entityStation = new SampledStationProperty();
     const entityBearing = new SampledBearingProperty();
-
-    const dataSource = map.findDataSourceByName(map.DATASOURCE_NAME.TRAIN); //TODO 얘를 좀 딴데로 옮길 수 있을것같은데... 매개변수로 전달하긴 더 싫고..ㅜㅜ
 
     let noRailway = false;
     //2. 시간과 속도, 가속도 계산
@@ -203,7 +167,6 @@ const makeTrainEntity = (line: string, train: Train, railways: Railway[]) => {
         // 4. 시간에 따른 각도 계산
         let lastBearing = 0;
         for(let k=0; k<timeSampleList.length; k++) {
-            //TODO 정차되어있는 시간동안의 각도가 포함되지 않았나보다...
             const time = timeSampleList[k];
             const location = locationList[k];
             const nextTime = timeSampleList[k+1];
@@ -220,6 +183,7 @@ const makeTrainEntity = (line: string, train: Train, railways: Railway[]) => {
 
         }
 
+        // 정차되어있는 동안의 각도는 정차하기 전의 각도와 같도록 함.
         if(array[index+2]) {
             const endNodeDepartDatetime = getTodayWithTime(array[index+1].depart);
             plus9hours(endNodeDepartDatetime);
@@ -233,21 +197,44 @@ const makeTrainEntity = (line: string, train: Train, railways: Railway[]) => {
     });
 
     if (noRailway) {
-        console.log(`${train.trainNo}: no railway info`); return;
+        console.log(`${train.trainNo}: no railway info`); return null;
     }
 
-    dataSource.entities.add({
+    const entity: Cesium.Entity = {
         id: train.trainNo,
         position: entityPosition,
         orientation: new Cesium.VelocityOrientationProperty(entityPosition), // Automatically set the vehicle's orientation to the direction it's facing.
         description: {
+            // @ts-ignore
             'station': entityStation,
             'bearing': entityBearing,
         },
         model: {
+            // @ts-ignore
             uri: `./data/${line}.glb`,
             scale: new Cesium.CallbackProperty(map.getSizeByZoom, false),
+            // @ts-ignore
             heightReference: Cesium.HeightReference.CLAMP_TO_GROUND
         },
-    });
+    };
+
+    return entity;
+
 }
+
+onmessage = function (event) {
+    const { line, trains, railways } = event.data;
+
+    // 작업 수행
+    const entities: Cesium.Entity[] = [];
+
+    for(let train of trains) {
+        if(railways && line) {
+            const entity = makeTrainEntity(line, train, railways);
+            if(entity) entities.push(entity);
+        }
+    }
+
+    // 결과물을 메인 스레드로 보냄
+    postMessage(entities);
+};
