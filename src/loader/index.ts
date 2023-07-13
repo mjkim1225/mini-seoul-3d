@@ -21,8 +21,7 @@ export default (viewer: Viewer) => {
         ]);
 
         const dataSet = trains(railwaysInfo, timetablesInfo); // worker 생성
-        dataSet.map(data =>
-            new Promise(resolve => {
+        dataSet.map(data => {
                 const worker = new Worker(new URL('../worker/trainWorker2.js', import.meta.url), {
                     type: 'module',
                 })
@@ -48,12 +47,12 @@ export default (viewer: Viewer) => {
                         })
 
                         entity.angles.map(angle => {
-                          entityBearing.addSample( new Period(angle.startDatetime, angle.endDatetime), angle.angle);
+                            entityBearing.addSample( new Period(angle.startDatetime, angle.endDatetime), angle.angle);
                         })
                         const newEntity = {
                             id: entity.trainNo,
                             position: entityPosition,
-                            orientation: new Cesium.VelocityOrientationProperty(entityPosition), // Automatically set the vehicle's orientation to the direction it's facing.
+                            orientation: new Cesium.VelocityOrientationProperty(entityPosition),
                             description: {
                                 'station': entityStation,
                                 'bearing': entityBearing,
@@ -73,8 +72,7 @@ export default (viewer: Viewer) => {
 
                 const { line, trains, railways } = data;
                 worker.postMessage({ line, trains, railways });
-            })
-        )
+        })
     }
 
     main();

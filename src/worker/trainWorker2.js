@@ -173,8 +173,8 @@ function makeTrainEntity (line, train, railways) {
 
             const angle = Turf.bearing(Turf.point(location), Turf.point(nextLocation));
             angles.push({
-                startTime: time,
-                endTime: nextTime,
+                startDatetime: time,
+                endDatetime: nextTime,
                 angle
             })
             lastBearing = angle;
