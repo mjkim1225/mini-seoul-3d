@@ -10,6 +10,7 @@ import map from "../map";
 import * as Cesium from "cesium";
 import {SampledStationProperty} from "../utils/SampledStationProperty";
 import {SampledBearingProperty} from "../utils/SampledBearingProperty";
+import {Period} from "../utils/datetime";
 
 export default (viewer: Viewer) => {
     async function main() {
@@ -42,17 +43,21 @@ export default (viewer: Viewer) => {
                             entityPosition.addSample(time, point);
                         })
 
-                        // entity.stations.map(station => {
-                        //
-                        // }
+                        entity.stations.map(station => {
+                            entityStation.addSample( new Period(station.startDatetime, station.endDatetime), station.info);
+                        })
+
+                        entity.angles.map(angle => {
+                          entityBearing.addSample( new Period(angle.startDatetime, angle.endDatetime), angle.angle);
+                        })
                         const newEntity = {
                             id: entity.trainNo,
                             position: entityPosition,
                             orientation: new Cesium.VelocityOrientationProperty(entityPosition), // Automatically set the vehicle's orientation to the direction it's facing.
-                            // description: {
-                            //     'station': entityStation,
-                            //     'bearing': entityBearing,
-                            // },
+                            description: {
+                                'station': entityStation,
+                                'bearing': entityBearing,
+                            },
                             model: {
                                 uri: `./data/${line}.glb`,
                                 scale: new Cesium.CallbackProperty(map.getSizeByZoom, false),
